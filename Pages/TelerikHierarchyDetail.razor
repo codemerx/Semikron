@@ -28,7 +28,7 @@ else
     {
         var res = await CommentService.GetCommentsByPostIdAsync(PostId, new()
         {
-            Limit = 500,
+            Limit = 15,
         });
 
         gridData = res.Data;
