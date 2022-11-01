@@ -7,4 +7,8 @@
     <RootNamespace>blazor_component_test</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Telerik.UI.for.Blazor.Trial" Version="3.6.1" />
+  </ItemGroup>
+
 </Project>

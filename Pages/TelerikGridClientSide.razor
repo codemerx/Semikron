@@ -1,0 +1,39 @@
+﻿@page "/telerik-grid-client-side"
+@using blazor_component_test.Data
+
+@inject CommentService CommentService
+
+<h3>CommentsComponent</h3>
+
+<ul>
+	<li>Pageable is not supported with the Virtualization feature</li>
+</ul>
+
+
+<TelerikGrid Data="@data"
+			 FilterMode="@GridFilterMode.FilterMenu" 
+			 ScrollMode="@GridScrollMode.Virtual"
+			 Height="480px"
+			 RowHeight="60">
+	<GridColumns>
+		<GridColumn Field="RowNumber" Title="Row Number" />
+		<GridColumn Field="Id" Title="Id" />
+		<GridColumn Field="PostId" Title="PostId" />
+		<GridColumn Field="Name" Title="Name" />
+		<GridColumn Field="Email" Title="Email" />
+	</GridColumns>
+</TelerikGrid>
+
+@code {
+	private Comment[] data;
+
+	protected override async Task OnInitializedAsync()
+	{
+		var res = await CommentService.GetRepeatedCommentsAsync(2000, new()
+			{
+				Limit = 500,
+			});
+
+		data = res.Data;
+	}
+}
