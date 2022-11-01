@@ -1,0 +1,46 @@
+@page "/telerik-tree-list"
+
+<TelerikTreeList Data="@TreeListData"
+                 IdField="@nameof(Employee.Id)"
+                 ParentIdField="@nameof(Employee.ParentId)"
+                 Pageable="true"
+                 Sortable="true"
+                 FilterMode="@TreeListFilterMode.FilterMenu">
+    <TreeListColumns>
+        <TreeListColumn Expandable="true" Field="FirstName" Title="First Name" />
+        <TreeListColumn Field="LastName" Title="Last Name" />
+        <TreeListColumn Field="Position" />
+    </TreeListColumns>
+</TelerikTreeList>
+
+@code {
+    List<Employee> TreeListData { get; set; }
+
+    protected override void OnInitialized()
+    {
+        TreeListData = new List<Employee>();
+
+        for (int i = 1; i <= 9; i++)
+        {
+            TreeListData.Add(new Employee()
+            {
+                Id = i,
+                ParentId = i <= 3 ? null : i % 3 + 1,
+                FirstName = "First " + i,
+                LastName = "Last " + i,
+                Position = i <= 3 ? "Team Lead" : "Software Engineer"
+            });
+        }
+
+        base.OnInitialized();
+    }
+
+    public class Employee
+    {
+        public int Id { get; set; }
+        public int? ParentId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Position { get; set; }
+    }
+}
