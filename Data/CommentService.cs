@@ -64,6 +64,7 @@
         public string Name { get; set; }
         public string Email { get; set; }
         public int RowNumber { get; set; }
+        public string Body { get; set; }
 
         public object Clone()
         {

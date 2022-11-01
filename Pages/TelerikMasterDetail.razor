@@ -4,6 +4,7 @@
 @inject PostService PostService;
 @inject CommentService CommentService;
 
+<h3>Posts</h3>
 <TelerikGrid TItem="@Post" Pageable="true" PageSize="15" OnRead="@ReadItemsForPostsGrid" OnRowClick="@OnRowClickHandler"
     SelectionMode="@GridSelectionMode.Single" @bind-SelectedItems="@selectedItems">
     <GridColumns>
@@ -17,6 +18,7 @@
 {
     <br />
     <br />
+    <h3>Comments</h3>
 
     @if (comments == null)
     {
@@ -28,7 +30,8 @@
             <GridColumns>
                 <GridColumn Field="Id" Title="Id" />
                 <GridColumn Field="Name" Title="Name" />
-                <GridColumn Field="Title" Title="Title" />
+                <GridColumn Field="Email" Title="Email" />
+                <GridColumn Field="Body" Title="Body" />
             </GridColumns>
         </TelerikGrid>
     }
