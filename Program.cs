@@ -15,6 +15,8 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<CommentService>();
 builder.Services.AddSingleton<PostService>();
 
+builder.Services.AddScoped<CommentAdaptor>();
+
 builder.Services.AddTelerikBlazor();
 builder.Services.AddSyncfusionBlazor();
 
