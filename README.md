@@ -5,8 +5,8 @@
 ||Telerik|Syncfusion|
 |-|-|-|
 |Data grid server-side pagination|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark: [^syncfusion_pagination]|
-|Data grid server-side filtering|:heavy_check_mark:/:heavy_check_mark:||
-|Data grid server-side sorting|:heavy_check_mark:/:heavy_check_mark:||
+|Data grid server-side filtering|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
+|Data grid server-side sorting|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
 |Data grid virtualization|:heavy_check_mark:/:heavy_check_mark: [^telerik_virtualization]||
 |Data grid hierarchy [^hierarchy]|:heavy_check_mark:/:heavy_check_mark:||
 |Tree grid server-side pagination|:x:/:x: [^telerik_tree_grid]||
