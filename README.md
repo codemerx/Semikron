@@ -4,19 +4,19 @@
 
 ||Telerik|Syncfusion|
 |-|-|-|
-|Data grid server-side pagination|:heavy_check_mark:/:x:|:x:|
-|Data grid server-side filtering|:heavy_check_mark:||
-|Data grid server-side sorting|:heavy_check_mark:||
-|Data grid virtualization|||
-|Data grid hierarchy [^hierarchy]|||
-|Tree grid server-side pagination|||
-|Tree grid server-side filtering|||
-|Tree grid server-side sorting|||
-|Tree grid virtualization|||
-|Line chart|||
-|Area chart|||
-|Bar chart|||
-|Stacked bar chart|||
+|Data grid server-side pagination|:heavy_check_mark:/:heavy_check_mark:|:x:|
+|Data grid server-side filtering|:heavy_check_mark:/:heavy_check_mark:||
+|Data grid server-side sorting|:heavy_check_mark:/:heavy_check_mark:||
+|Data grid virtualization|:heavy_check_mark:/:heavy_check_mark: [^telerik_virtualization]||
+|Data grid hierarchy [^hierarchy]|:heavy_check_mark:/:heavy_check_mark:||
+|Tree grid [^telerik_tree_grid] server-side pagination|:x:/:x:||
+|Tree grid server-side filtering|:x:/:x:||
+|Tree grid server-side sorting|:x:/:x:||
+|Tree grid virtualization|:x:/:x:||
+|Line chart|:heavy_check_mark:/:heavy_check_mark:||
+|Area chart|:heavy_check_mark:/:heavy_check_mark:||
+|Bar chart|:heavy_check_mark:/:heavy_check_mark:||
+|Stacked bar chart|:heavy_check_mark:/:heavy_check_mark:||
 |Notes|[^telerik]||
 
 Legend:
@@ -25,4 +25,7 @@ Legend:
 - :heavy_check_mark:/:x: = Blazor Server/Blazor WebAssembly
 
 [^hierarchy]: the ability to expand every row and have custom components inside
+[^telerik_virtualization]: Does not work with pagination. Has browser height limit.
+[^telerik_tree_grid]: Expects data from parameters. Has no parameter like **OnRead** EventCallback.
+[^telerik_tree_grid_virtualization]: Has only column (horizontally)
 [^telerik]: Put notes here
