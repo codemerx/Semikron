@@ -16,7 +16,7 @@ namespace blazor_component_test.Data
         {
             var res = await commentService.GetCommentsAsync(new()
             {
-                Page = (req.Take > 0) ? (req.Skip / req.Take) + 1 : 0,
+                Page = (req.Take > 0) ? (req.Skip / req.Take) + 1 : 1,
                 Limit = (req.Take > 0) ? req.Take : 500,
             });
 
