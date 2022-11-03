@@ -1,6 +1,7 @@
 using blazor_component_test.Data;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
+using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddSingleton<CommentService>();
 builder.Services.AddSingleton<PostService>();
 
 builder.Services.AddTelerikBlazor();
+builder.Services.AddSyncfusionBlazor();
 
 var app = builder.Build();
 
