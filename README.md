@@ -32,4 +32,4 @@ Legend:
 [^telerik]: Put notes here
 [^syncfusion]: It has separate nuget package for each component. Can be good for wasm project.
 [^syncfusion_pagination]: Has build-in loading animation
-[^syncfusion_virtualization]: Works with server side pagination
+[^syncfusion_virtualization]: Works with server side and client side pagination
