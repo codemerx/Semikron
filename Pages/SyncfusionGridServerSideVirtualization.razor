@@ -1,0 +1,23 @@
+@page "/syncfusion-grid-server-side-virtualization"
+
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor.Grids
+@using blazor_component_test.Data
+
+<SfGrid TValue="@Comment" Height="500" EnableVirtualization="true">
+    <SfDataManager AdaptorInstance="@typeof(CommentAdaptor)" Adaptor="Adaptors.CustomAdaptor"></SfDataManager>
+    
+    <GridFilterSettings Type ="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+    <GridPageSettings PageSize="50"></GridPageSettings>
+
+    <GridColumns>
+        <Syncfusion.Blazor.Grids.GridColumn Field="Id" HeaderText="Id"/>
+        <Syncfusion.Blazor.Grids.GridColumn Field="PostId" HeaderText="Post Id"/>
+        <Syncfusion.Blazor.Grids.GridColumn Field="Name" HeaderText="Name"/>
+        <Syncfusion.Blazor.Grids.GridColumn Field="Email" HeaderText="Email"/>
+    </GridColumns>
+</SfGrid>
+
+@code {
+    
+}
