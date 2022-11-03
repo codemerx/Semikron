@@ -16,15 +16,11 @@ namespace blazor_component_test.Data
         {
             var res = await commentService.GetCommentsAsync(new()
             {
-                Page = (req.Skip / req.Take) + 1,
+                Page = (req.Take > 0) ? (req.Skip / req.Take) + 1 : 0,
                 Limit = (req.Take > 0) ? req.Take : 500,
             });
 
-            return new DataResult()
-            {
-                Count = res.Total,
-                Result = res.Data,
-            };
+            return req.RequiresCounts ? new DataResult() { Result = res.Data, Count = res.Total } : (object)res.Data;
         }
 
     }
