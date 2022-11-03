@@ -7,7 +7,7 @@
 |Data grid server-side pagination|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark: [^syncfusion_pagination]|
 |Data grid server-side filtering|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
 |Data grid server-side sorting|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
-|Data grid virtualization|:heavy_check_mark:/:heavy_check_mark: [^telerik_virtualization]||
+|Data grid virtualization|:heavy_check_mark:/:heavy_check_mark: [^telerik_virtualization]|:heavy_check_mark: [^syncfusion_virtualization]|
 |Data grid hierarchy [^hierarchy]|:heavy_check_mark:/:heavy_check_mark:||
 |Tree grid server-side pagination|:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]||
 |Tree grid server-side filtering|:x:/:x:||
@@ -32,3 +32,4 @@ Legend:
 [^telerik]: Put notes here
 [^syncfusion]: It has separate nuget package for each component. Can be good for wasm project.
 [^syncfusion_pagination]: Has build-in loading animation
+[^syncfusion_virtualization]: Works with server side pagination
