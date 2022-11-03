@@ -24,12 +24,15 @@
 <TelerikChart>
     <ChartSeriesItems>
         <ChartSeries Type="ChartSeriesType.Bar" Name="Comments" Data="@comments" >
+            <ChartSeriesStack Enabled="true" Group="group1"></ChartSeriesStack>
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
         <ChartSeries Type="ChartSeriesType.Bar" Name="Likes" Data="@likes">
+            <ChartSeriesStack Enabled="true" Group="group2"></ChartSeriesStack>
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
         <ChartSeries Type="ChartSeriesType.Bar" Name="Dislikes" Data="@dislikes" Color="purple">
+            <ChartSeriesStack Enabled="true" Group="group2"></ChartSeriesStack>
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
     </ChartSeriesItems>
