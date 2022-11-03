@@ -17,7 +17,7 @@
 |Area chart|:heavy_check_mark:/:heavy_check_mark:||
 |Bar chart|:heavy_check_mark:/:heavy_check_mark:||
 |Stacked bar chart|:heavy_check_mark:/:heavy_check_mark:||
-|Notes|[^telerik]||
+|Notes|[^telerik]|[^syncfusion]|
 
 Legend:
 - :heavy_check_mark: = works
@@ -29,3 +29,4 @@ Legend:
 [^telerik_tree_grid]: Expects data from parameters. Has no parameter like **OnRead** EventCallback.
 [^telerik_tree_grid_virtualization]: Has only column (horizontally)
 [^telerik]: Put notes here
+[^syncfusion]: It has separate nuget package for each component. Can be good for wasm project.
