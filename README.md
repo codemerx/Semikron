@@ -9,7 +9,7 @@
 |Data grid server-side sorting|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
 |Data grid virtualization|:heavy_check_mark:/:heavy_check_mark: [^telerik_virtualization]||
 |Data grid hierarchy [^hierarchy]|:heavy_check_mark:/:heavy_check_mark:||
-|Tree grid server-side pagination|:x:/:x: [^telerik_tree_grid]||
+|Tree grid server-side pagination|:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]||
 |Tree grid server-side filtering|:x:/:x:||
 |Tree grid server-side sorting|:x:/:x:||
 |Tree grid virtualization|:x:/:x:||
@@ -26,6 +26,7 @@ Legend:
 
 [^hierarchy]: the ability to expand every row and have custom components inside
 [^telerik_virtualization]: Does not work with pagination. Has browser height limit.
+[^telerik_tree_grid_info]: The name is **TreeList** in telerik components
 [^telerik_tree_grid]: Expects data from parameters. Has no parameter like **OnRead** EventCallback.
 [^telerik_tree_grid_virtualization]: Has only column (horizontally)
 [^telerik]: Put notes here
