@@ -33,4 +33,4 @@ Legend:
 [^telerik]: Put notes here
 [^syncfusion]: It has separate nuget package for each component. Can be good for wasm project.
 [^syncfusion_pagination]: Has build-in loading animation
-[^syncfusion_virtualization]: Also works with server side pagination. It loads data while scrolling.
+[^syncfusion_virtualization]: Also works with server side pagination. It loads data while scrolling. But has problem like does not load last 10-20 items. Can be has solution.

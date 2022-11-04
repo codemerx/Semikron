@@ -4,11 +4,10 @@
 @using Syncfusion.Blazor.Grids
 @using blazor_component_test.Data
 
-<SfGrid TValue="@Comment" Height="500" EnableVirtualization="true">
+<SfGrid TValue="@Comment" Height="500" EnableVirtualization="true" EnableVirtualMaskRow="true">
     <SfDataManager AdaptorInstance="@typeof(CommentAdaptor)" Adaptor="Adaptors.CustomAdaptor"></SfDataManager>
     
-    <GridFilterSettings Type ="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
-    <GridPageSettings PageSize="50"></GridPageSettings>
+    <GridPageSettings PageSize="70"></GridPageSettings>
 
     <GridColumns>
         <Syncfusion.Blazor.Grids.GridColumn Field="Id" HeaderText="Id"/>
