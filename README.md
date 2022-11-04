@@ -12,7 +12,7 @@
 |Tree grid server-side pagination|:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark: [^syncfusion_tree_grid_server_side]|
 |Tree grid server-side filtering|:x:/:x:|:heavy_check_mark:|
 |Tree grid server-side sorting|:x:/:x:|:heavy_check_mark:|
-|Tree grid virtualization|:x:/:x:|:heavy_check_mark:|
+|Tree grid virtualization|:x:/:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|
 |Line chart|:heavy_check_mark:/:heavy_check_mark:||
 |Area chart|:heavy_check_mark:/:heavy_check_mark:||
 |Bar chart|:heavy_check_mark:/:heavy_check_mark:||
@@ -29,7 +29,7 @@ Legend:
 [^virtualization_limits]: Has browser height limit.
 [^telerik_tree_grid_info]: The name is **TreeList** in telerik components
 [^telerik_tree_grid]: Expects data from parameters. Has no parameter like **OnRead** EventCallback.
-[^telerik_tree_grid_virtualization]: Has only column (horizontally)
+[^telerik_tree_grid_virtualization]: Has only column (horizontally) virtualization
 [^telerik]: Put notes here
 [^syncfusion]: It has separate nuget package for each component. Can be good for wasm project.
 [^syncfusion_pagination]: Has build-in loading animation
