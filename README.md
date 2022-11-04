@@ -13,10 +13,10 @@
 |Tree grid server-side filtering|:x:/:x:|:heavy_check_mark:|
 |Tree grid server-side sorting|:x:/:x:|:heavy_check_mark:|
 |Tree grid virtualization|:x:/:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|
-|Line chart|:heavy_check_mark:/:heavy_check_mark:||
-|Area chart|:heavy_check_mark:/:heavy_check_mark:||
-|Bar chart|:heavy_check_mark:/:heavy_check_mark:||
-|Stacked bar chart|:heavy_check_mark:/:heavy_check_mark:||
+|Line chart|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
+|Area chart|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
+|Bar chart|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
+|Stacked bar chart|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
 |Notes|[^telerik]|[^syncfusion]|
 
 Legend:
