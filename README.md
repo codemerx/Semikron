@@ -9,10 +9,10 @@
 |Data grid server-side sorting|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
 |Data grid virtualization|:heavy_check_mark:/:heavy_check_mark: [^telerik_virtualization], [^virtualization_limits]|:heavy_check_mark: [^syncfusion_virtualization], [^virtualization_limits]|
 |Data grid hierarchy [^hierarchy]|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
-|Tree grid server-side pagination|:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]||
-|Tree grid server-side filtering|:x:/:x:||
-|Tree grid server-side sorting|:x:/:x:||
-|Tree grid virtualization|:x:/:x:||
+|Tree grid server-side pagination|:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark: [^syncfusion_tree_grid_server_side]|
+|Tree grid server-side filtering|:x:/:x:|:heavy_check_mark:|
+|Tree grid server-side sorting|:x:/:x:|:heavy_check_mark:|
+|Tree grid virtualization|:x:/:x:|:heavy_check_mark:|
 |Line chart|:heavy_check_mark:/:heavy_check_mark:||
 |Area chart|:heavy_check_mark:/:heavy_check_mark:||
 |Bar chart|:heavy_check_mark:/:heavy_check_mark:||
@@ -34,3 +34,4 @@ Legend:
 [^syncfusion]: It has separate nuget package for each component. Can be good for wasm project.
 [^syncfusion_pagination]: Has build-in loading animation
 [^syncfusion_virtualization]: Also works with server side pagination. It loads data while scrolling. But has problem like does not load last 10-20 items. Can be has solution.
+[^syncfusion_tree_grid_server_side]: Document says, with CustomDataManager only Self-Referential(Flat) type data is supported. Hierarchical data has limited customizations.
