@@ -8,7 +8,7 @@
 |Data grid server-side filtering|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
 |Data grid server-side sorting|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
 |Data grid virtualization|:heavy_check_mark:/:heavy_check_mark: [^telerik_virtualization], [^virtualization_limits]|:heavy_check_mark: [^syncfusion_virtualization], [^virtualization_limits]|
-|Data grid hierarchy [^hierarchy]|:heavy_check_mark:/:heavy_check_mark:||
+|Data grid hierarchy [^hierarchy]|:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:|
 |Tree grid server-side pagination|:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]||
 |Tree grid server-side filtering|:x:/:x:||
 |Tree grid server-side sorting|:x:/:x:||
