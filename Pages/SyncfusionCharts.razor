@@ -43,15 +43,12 @@
     <ChartSeriesCollection>
         <Syncfusion.Blazor.Charts.ChartSeries DataSource="@comments" Name="Comments" XName="X" YName="Y"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Bar">
-            <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
         <Syncfusion.Blazor.Charts.ChartSeries DataSource="@likes" Name="Likes" XName="X" YName="Y"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.StackingBar" StackingGroup="Group1">
-            <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
         <Syncfusion.Blazor.Charts.ChartSeries DataSource="@dislikes" Name="Dislikes" XName="X" YName="Y"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.StackingBar" StackingGroup="Group1" Fill="purple">
-            <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
     </ChartSeriesCollection>
 </SfChart>
@@ -66,17 +63,14 @@
     <ChartSeriesCollection>
         <Syncfusion.Blazor.Charts.ChartSeries DataSource="@sells1" Name="Sells 1" XName="X" YName="Y"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.StackingColumn" StackingGroup="Group1">
-            <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
 
         <Syncfusion.Blazor.Charts.ChartSeries DataSource="@sells2" Name="Sells 2" XName="X" YName="Y"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.StackingColumn" StackingGroup="Group1">
-            <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
 
         <Syncfusion.Blazor.Charts.ChartSeries DataSource="@profit" Name="Profit" XName="X" YName="Y"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Column">
-            <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
     </ChartSeriesCollection>
 </SfChart>
