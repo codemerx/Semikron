@@ -1,4 +1,4 @@
-@page "/telerik-hierarchy"
+@page "/telerik-grid-hierarchy"
 @using SharedLibrary.Data
 
 @inject PostService PostService;
@@ -7,7 +7,7 @@
 
     <DetailTemplate>
         @{
-            <TelerikHierarchyDetail PostId="@context.Id" />
+            <TelerikGridHierarchyDetail PostId="@context.Id" />
         }
     </DetailTemplate>
     <GridColumns>

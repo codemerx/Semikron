@@ -1,89 +1,132 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">BlazorServer</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
+﻿<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">Submenu master</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+<div class="@NavMenuCssClass">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" @onclick="()=>ToggleNavMenu()" href=""     Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="telerik-grid-client-side">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> TelerikGrid Client Side
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="telerik-grid-server-side">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> TelerikGrid Server Side
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="telerik-hierarchy">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Telerik Hierarchy
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="telerik-master-detail">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Telerik Master Detail
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="telerik-tree-list">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Telerik Tree List
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="telerik-charts">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Telerik Charts
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="syncfusion-grid-server-side">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> SFGrid ServerSide
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="syncfusion-grid-server-side-virtualization">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> SFGrid ServerSide Virt.
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="syncfusion-grid-client-side">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> SFGrid ClientSide
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="syncfusion-hierarchy">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> SFGrid Hierarchy
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="syncfusion-tree-grid">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> SFGrid Tree Grid
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="syncfusion-charts">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> SF Charts
-            </NavLink>
-        </div>
-    </nav>
+        </li>
+
+        @foreach (var item in menuLinks)
+        {
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" @onclick="() => item.Expanded = !item.Expanded">
+                    <span class="oi oi-menu" aria-hidden="true"></span> @item.Name
+                </NavLink>
+            </li>
+            @if (item.Expanded)
+            {
+                @foreach (var subItem in item.Items)
+                {
+                    <li class="nav-item px-4" @onclick="ToggleNavMenu">
+                        <NavLink class="nav-link" href="@subItem.Href">
+                            <span class="oi oi-plus" aria-hidden="true"></span> @subItem.Name
+                        </NavLink>
+                    </li>
+                }
+            }
+        }
+    </ul>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    ExpandMenu[] menuLinks = Array.Empty<ExpandMenu>();
+
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        InitLinks();
+    }
+
+    private void InitLinks(){
+        menuLinks = new []{
+            new ExpandMenu{
+                Name= "Telerik",
+                Items = new []{
+                    new SubMenu{
+                        Name="Grid Pagination",
+                        Href="telerik-grid-pagination"
+                    },
+                    new SubMenu{
+                        Name="Grid Virtualization",
+                        Href="telerik-grid-virtualization"
+                    },
+                    new SubMenu{
+                        Name="Grid Hierarchy",
+                        Href="telerik-grid-hierarchy"
+                    },
+                    new SubMenu{
+                        Name="Tree Grid Pagination",
+                        Href="telerik-tree-list"
+                    },
+                    new SubMenu{
+                        Name="Tree Grid Virt.",
+                        Href="telerik-tree-list"
+                    },
+                    new SubMenu{
+                        Name="Charts",
+                        Href="telerik-charts"
+                    },
+                }
+            },
+            new ExpandMenu{
+                Name= "Syncfusion",
+                Items = new []{
+                    new SubMenu{
+                        Name="Grid Pagination",
+                        Href="syncfusion-grid-pagination"
+                    },
+                    new SubMenu{
+                        Name="Grid Virtualization",
+                        Href="syncfusion-grid-virtualization"
+                    },
+                    new SubMenu{
+                        Name="Grid Hierarchy",
+                        Href="syncfusion-grid-hierarchy"
+                    },
+                    new SubMenu{
+                        Name="Tree Grid Pagination",
+                        Href="syncfusion-tree-grid"
+                    },
+                    new SubMenu{
+                        Name="Tree Grid Virt.",
+                        Href="syncfusion-tree-grid"
+                    },
+                    new SubMenu{
+                        Name="Charts",
+                        Href="syncfusion-charts"
+                    },
+                }
+            }
+        };
+    }
+    
+
+    class ExpandMenu{
+        public string Name { get; set; }
+        public bool Expanded { get; set; }
+        public SubMenu[] Items { get; set; }
+    }
+
+    class SubMenu{
+        public string Name { get; set; }
+        public string Href { get; set; }
+    }
 }
+
