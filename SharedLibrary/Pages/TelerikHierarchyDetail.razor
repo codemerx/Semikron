@@ -1,0 +1,36 @@
+@using SharedLibrary.Data
+
+@inject CommentService CommentService;
+
+@if (gridData == null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <TelerikGrid Data="@gridData">
+        <GridColumns>
+            <GridColumn Field="Id" Title="Id" />
+            <GridColumn Field="Name" Title="Name" />
+            <GridColumn Field="Email" Title="Email" />
+        </GridColumns>
+    </TelerikGrid>
+
+}
+
+
+@code {
+
+    [Parameter] public int PostId { get; set; }
+    private Comment[]? gridData = null;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var res = await CommentService.GetCommentsByPostIdAsync(PostId, new()
+        {
+            Limit = 15,
+        });
+
+        gridData = res.Data;
+    }
+}

@@ -1,0 +1,34 @@
+@page "/telerik-hierarchy"
+@using SharedLibrary.Data
+
+@inject PostService PostService;
+
+<TelerikGrid Data="@gridData">
+
+    <DetailTemplate>
+        @{
+            <TelerikHierarchyDetail PostId="@context.Id" />
+        }
+    </DetailTemplate>
+    <GridColumns>
+        <GridColumn Field="Id" Title="Id" />
+        <GridColumn Field="UserId" Title="UserId" />
+        <GridColumn Field="Title" Title="Title" />
+    </GridColumns>
+</TelerikGrid>
+
+
+@code {
+
+    private Post[] gridData = Array.Empty<Post>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var res = await PostService.GetPostsAsync(new()
+        {
+            Limit = 500,
+        });
+
+        gridData = res.Data;
+    }
+}

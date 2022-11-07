@@ -1,0 +1,66 @@
+@page "/telerik-master-detail"
+@using SharedLibrary.Data
+
+@inject PostService PostService;
+@inject CommentService CommentService;
+
+<h3>Posts</h3>
+<TelerikGrid TItem="@Post" Pageable="true" PageSize="15" OnRead="@ReadItemsForPostsGrid" OnRowClick="@OnRowClickHandler"
+    SelectionMode="@GridSelectionMode.Single" @bind-SelectedItems="@selectedItems">
+    <GridColumns>
+        <GridColumn Field="Id" Title="Id" />
+        <GridColumn Field="UserId" Title="User Id" />
+        <GridColumn Field="Title" Title="Title" />
+    </GridColumns>
+</TelerikGrid>
+
+@if (selectedItems.Any())
+{
+    <br />
+    <br />
+    <h3>Comments</h3>
+
+    @if (comments == null)
+    {
+        <div>Loading...</div>
+    }
+    else
+    {
+        <TelerikGrid Data="@comments">
+            <GridColumns>
+                <GridColumn Field="Id" Title="Id" />
+                <GridColumn Field="Name" Title="Name" />
+                <GridColumn Field="Email" Title="Email" />
+                <GridColumn Field="Body" Title="Body" />
+            </GridColumns>
+        </TelerikGrid>
+    }
+
+}
+
+@code {
+    private Comment[]? comments = null;
+    IEnumerable<Post> selectedItems = Enumerable.Empty<Post>();
+
+    protected async Task ReadItemsForPostsGrid(GridReadEventArgs args)
+    {
+        var res = await PostService.GetPostsAsync(new()
+        {
+            Page = args.Request.Page,
+            Limit = args.Request.PageSize,
+        });
+
+        args.Data = res.Data;
+        args.Total = res.Total;
+    }
+
+    private async Task OnRowClickHandler(GridRowClickEventArgs args)
+    {
+        var selectedItem = args.Item as Post;
+        if (selectedItem == null) return;
+
+        comments = null;
+        var res = await CommentService.GetCommentsByPostIdAsync(selectedItem.Id, new() { Limit = 15 });
+        comments = res.Data;
+    }
+}

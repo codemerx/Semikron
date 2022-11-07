@@ -1,0 +1,23 @@
+@page "/syncfusion-grid-server-side"
+
+@using Syncfusion.Blazor.Data
+@using Syncfusion.Blazor.Grids
+@using SharedLibrary.Data
+
+<SfGrid TValue="@Comment" AllowPaging="true">
+    <SfDataManager AdaptorInstance="@typeof(CommentAdaptor)" Adaptor="Adaptors.CustomAdaptor"></SfDataManager>
+
+    <GridPageSettings PageSize="15"></GridPageSettings>
+
+    <GridColumns>
+        <Syncfusion.Blazor.Grids.GridColumn Field="Id" HeaderText="Id"/>
+        <Syncfusion.Blazor.Grids.GridColumn Field="PostId" HeaderText="Post Id"/>
+        <Syncfusion.Blazor.Grids.GridColumn Field="Name" HeaderText="Name"/>
+        <Syncfusion.Blazor.Grids.GridColumn Field="Email" HeaderText="Email"/>
+    </GridColumns>
+</SfGrid>
+
+@code {
+
+    
+}

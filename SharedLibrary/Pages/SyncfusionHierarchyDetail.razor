@@ -1,0 +1,36 @@
+@using Syncfusion.Blazor.Grids
+@using SharedLibrary.Data
+
+@inject CommentService CommentService;
+
+@if (gridData == null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <SfGrid DataSource="@gridData">
+
+        <GridColumns>
+            <Syncfusion.Blazor.Grids.GridColumn Field="Id" HeaderText="Id" />
+            <Syncfusion.Blazor.Grids.GridColumn Field="PostId" HeaderText="Post Id" />
+            <Syncfusion.Blazor.Grids.GridColumn Field="Name" HeaderText="Name" />
+            <Syncfusion.Blazor.Grids.GridColumn Field="Email" HeaderText="Email" />
+        </GridColumns>
+    </SfGrid>
+}
+
+@code {
+    [Parameter] public int PostId { get; set; }
+    private Comment[]? gridData = null;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var res = await CommentService.GetCommentsByPostIdAsync(PostId, new()
+        {
+            Limit = 15,
+        });
+
+        gridData = res.Data;
+    }
+}
