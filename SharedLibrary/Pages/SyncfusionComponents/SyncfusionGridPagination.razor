@@ -8,9 +8,11 @@
 <p>To sort multiple columns, press and hold the <b>CTRL</b> key and click the column header. </p>
 
 <SfGrid DataSource="@gridData" AllowPaging="true"
-    AllowSorting="true" AllowMultiSorting="true">
+    AllowSorting="true" AllowMultiSorting="true"
+    AllowFiltering="true">
     
     <GridPageSettings PageSize="15"></GridPageSettings>
+    <GridFilterSettings Type ="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
 
     <GridColumns>
         <Syncfusion.Blazor.Grids.GridColumn Field="RowNumber" HeaderText="RowNumber" />

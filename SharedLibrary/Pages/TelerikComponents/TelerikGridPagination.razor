@@ -6,7 +6,8 @@
 <h3>CommentsComponent</h3>
 
 <TelerikGrid Data="@gridData" Pageable="true" PageSize="15"
-	Sortable="true" SortMode="@SortMode.Multiple">
+	Sortable="true" SortMode="@SortMode.Multiple" 
+	FilterMode="Telerik.Blazor.GridFilterMode.FilterMenu">
 	
 	<GridColumns>
 		<GridColumn Field="RowNumber" Title="Row Number" />
