@@ -1,0 +1,32 @@
+@page "/syncfusion-tree-grid-virtualization"
+
+@using Data
+@using Syncfusion.Blazor.TreeGrid
+
+@inject Database db
+
+<SfTreeGrid DataSource="@gridData" IdMapping="TaskId" ParentIdMapping="ParentId" TreeColumnIndex="0" 
+    EnableVirtualization="true" Height="480"
+    AllowSorting="true" AllowMultiSorting="true"
+    AllowFiltering="true">
+
+    <TreeGridPageSettings PageSize="15" PageSizeMode="PageSizeMode.All"></TreeGridPageSettings>
+    <TreeGridFilterSettings HierarchyMode="@FilterHierarchyMode.Parent" Type="Syncfusion.Blazor.TreeGrid.FilterType.Menu"></TreeGridFilterSettings>
+
+    <TreeGridColumns>
+        <TreeGridColumn Field="TaskId" HeaderText="Task ID"></TreeGridColumn>
+        <TreeGridColumn Field="TaskName" HeaderText="Task Name"></TreeGridColumn>
+        <TreeGridColumn Field="Duration" HeaderText="Duration"></TreeGridColumn>
+        <TreeGridColumn Field="Progress" HeaderText="Progress"></TreeGridColumn>
+        <TreeGridColumn Field="Priority" HeaderText="Priority"></TreeGridColumn>
+    </TreeGridColumns>
+</SfTreeGrid>
+
+@code {
+    private List<TaskInfo> gridData { get; set; } = new List<TaskInfo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = (await db.GetData()).TaskInfo;
+    }
+}
