@@ -1,0 +1,32 @@
+@page "/syncfusion-tree-grid-pagination"
+
+@using Data
+@using Syncfusion.Blazor.TreeGrid
+
+@inject Database db
+
+<SfTreeGrid DataSource="@gridData" IdMapping="TaskId" ParentIdMapping="ParentId" TreeColumnIndex="1"
+    AllowPaging="true">
+
+    <TreeGridPageSettings PageSize="2"></TreeGridPageSettings>
+
+    <TreeGridColumns>
+        <TreeGridColumn Field="TaskId" HeaderText="Task ID" Width="80"
+            TextAlign="Syncfusion.Blazor.Grids.TextAlign.Right"></TreeGridColumn>
+        <TreeGridColumn Field="TaskName" HeaderText="Task Name" Width="160"></TreeGridColumn>
+        <TreeGridColumn Field="Duration" HeaderText="Duration" Width="100"
+            TextAlign="Syncfusion.Blazor.Grids.TextAlign.Right"></TreeGridColumn>
+        <TreeGridColumn Field="Progress" HeaderText="Progress" Width="100"
+            TextAlign="Syncfusion.Blazor.Grids.TextAlign.Right"></TreeGridColumn>
+        <TreeGridColumn Field="Priority" HeaderText="Priority" Width="80"></TreeGridColumn>
+    </TreeGridColumns>
+</SfTreeGrid>
+
+@code {
+    private List<TaskInfo> gridData { get; set; } = new List<TaskInfo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = (await db.GetData()).TaskInfo;
+    }
+}

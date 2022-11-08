@@ -1,47 +1,29 @@
 @page "/telerik-tree-list"
+@using SharedLibrary.Data
 
-<TelerikTreeList Data="@TreeListData"
-                 IdField="@nameof(Employee.Id)"
-                 ParentIdField="@nameof(Employee.ParentId)"
+@inject Database db
+
+<TelerikTreeList Data="@gridData"
+                 IdField="TaskId"
+                 ParentIdField="ParentId"
                  Pageable="true"
                  Sortable="true"
                  PageSize="7"
                  FilterMode="@TreeListFilterMode.FilterMenu">
     <TreeListColumns>
-        <TreeListColumn Expandable="true" Field="FirstName" Title="First Name" />
-        <TreeListColumn Field="LastName" Title="Last Name" />
-        <TreeListColumn Field="Position" />
+        <TreeListColumn Expandable="true" Field="TaskId" Title="Task ID" />
+        <TreeListColumn Field="TaskName" Title="Task Name" />
+        <TreeListColumn Field="Duration" Title="Duration"/>
+        <TreeListColumn Field="Progress" Title="Progress"/>
+        <TreeListColumn Field="Priority" Title="Priority"/>
     </TreeListColumns>
 </TelerikTreeList>
 
 @code {
-    List<Employee> TreeListData { get; set; }
+    private List<TaskInfo> gridData { get; set; } = new List<TaskInfo>();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        TreeListData = new List<Employee>();
-
-        for (int i = 1; i <= 9; i++)
-        {
-            TreeListData.Add(new Employee()
-            {
-                Id = i,
-                ParentId = i <= 3 ? null : i % 3 + 1,
-                FirstName = "First " + i,
-                LastName = "Last " + i,
-                Position = i <= 3 ? "Team Lead" : "Software Engineer"
-            });
-        }
-
-        base.OnInitialized();
-    }
-
-    public class Employee
-    {
-        public int Id { get; set; }
-        public int? ParentId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Position { get; set; }
+        gridData = (await db.GetData()).TaskInfo;
     }
 }
