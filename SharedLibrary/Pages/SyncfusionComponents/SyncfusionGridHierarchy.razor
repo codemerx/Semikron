@@ -7,8 +7,13 @@
 @inject Database db;
 
 
-<SfGrid DataSource="@gridData" AllowPaging="true">
+<SfGrid DataSource="@gridData" AllowPaging="true"
+    AllowSorting="true" AllowMultiSorting="true"
+    AllowFiltering="true"
+    AllowGrouping="true">
+
     <GridPageSettings PageSize="15"></GridPageSettings>
+    <GridFilterSettings Type ="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
 
     <GridTemplates>
         <DetailTemplate>
@@ -21,9 +26,8 @@
 
     <GridColumns>
         <Syncfusion.Blazor.Grids.GridColumn Field="Id" HeaderText="Id" />
-        <Syncfusion.Blazor.Grids.GridColumn Field="PostId" HeaderText="Post Id" />
-        <Syncfusion.Blazor.Grids.GridColumn Field="Name" HeaderText="Name" />
-        <Syncfusion.Blazor.Grids.GridColumn Field="Email" HeaderText="Email" />
+        <Syncfusion.Blazor.Grids.GridColumn Field="UserId" HeaderText="User Id" />
+        <Syncfusion.Blazor.Grids.GridColumn Field="Title" HeaderText="Title" />
     </GridColumns>
 </SfGrid>
 

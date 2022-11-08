@@ -3,7 +3,10 @@
 
 @inject Database db;
 
-<TelerikGrid Data="@gridData" Pageable="true" PageSize="15">
+<TelerikGrid Data="@gridData" Pageable="true" PageSize="15"
+    Sortable="true" SortMode="@SortMode.Multiple" 
+	FilterMode="Telerik.Blazor.GridFilterMode.FilterMenu"
+	Groupable="true">
 
     <DetailTemplate>
         @{
