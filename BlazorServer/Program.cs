@@ -9,10 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-builder.Services.AddHttpClient<CommentService>();
-builder.Services.AddHttpClient<PostService>();
-
-builder.Services.AddTransient<CommentAdaptor>();
+builder.Services.AddSingleton<Database, DBLoaderForServerBlazor>();
 
 builder.Services.AddTelerikBlazor();
 builder.Services.AddSyncfusionBlazor();

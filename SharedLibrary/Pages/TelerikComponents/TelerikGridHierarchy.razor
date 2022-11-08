@@ -1,9 +1,9 @@
 @page "/telerik-grid-hierarchy"
 @using SharedLibrary.Data
 
-@inject PostService PostService;
+@inject Database db;
 
-<TelerikGrid Data="@gridData">
+<TelerikGrid Data="@gridData" Pageable="true" PageSize="15">
 
     <DetailTemplate>
         @{
@@ -19,16 +19,10 @@
 
 
 @code {
-
-    private Post[] gridData = Array.Empty<Post>();
+    private List<Post> gridData = new List<Post>();
 
     protected override async Task OnInitializedAsync()
     {
-        var res = await PostService.GetPostsAsync(new()
-        {
-            Limit = 500,
-        });
-
-        gridData = res.Data;
+        gridData = (await db.GetData()).Posts;
     }
 }

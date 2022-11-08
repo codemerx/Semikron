@@ -1,7 +1,7 @@
 @using Syncfusion.Blazor.Grids
 @using SharedLibrary.Data
 
-@inject CommentService CommentService;
+@inject Database db;
 
 @if (gridData == null)
 {
@@ -22,15 +22,10 @@ else
 
 @code {
     [Parameter] public int PostId { get; set; }
-    private Comment[]? gridData = null;
+    private List<Comment>? gridData = null;
 
     protected override async Task OnParametersSetAsync()
     {
-        var res = await CommentService.GetCommentsByPostIdAsync(PostId, new()
-        {
-            Limit = 15,
-        });
-
-        gridData = res.Data;
+        gridData = (await db.GetData()).Comments.FindAll(x => x.PostId == PostId);
     }
 }

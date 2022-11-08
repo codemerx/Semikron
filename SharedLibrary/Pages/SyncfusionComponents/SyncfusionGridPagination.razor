@@ -1,15 +1,15 @@
 @page "/syncfusion-grid-pagination"
 
-@using Syncfusion.Blazor.Data
 @using Syncfusion.Blazor.Grids
 @using SharedLibrary.Data
 
-<SfGrid TValue="@Comment" AllowPaging="true">
-    <SfDataManager AdaptorInstance="@typeof(CommentAdaptor)" Adaptor="Adaptors.CustomAdaptor"></SfDataManager>
+@inject Database db;
 
+<SfGrid DataSource="@gridData" AllowPaging="true">
     <GridPageSettings PageSize="15"></GridPageSettings>
 
     <GridColumns>
+        <Syncfusion.Blazor.Grids.GridColumn Field="RowNumber" HeaderText="RowNumber" />
         <Syncfusion.Blazor.Grids.GridColumn Field="Id" HeaderText="Id"/>
         <Syncfusion.Blazor.Grids.GridColumn Field="PostId" HeaderText="Post Id"/>
         <Syncfusion.Blazor.Grids.GridColumn Field="Name" HeaderText="Name"/>
@@ -19,5 +19,10 @@
 
 @code {
 
-    
+    private List<Comment> gridData = new List<Comment>();
+
+	protected override async Task OnInitializedAsync()
+    {
+        gridData = db.Repeat(2000, (await db.GetData()).Comments);
+    }
 }

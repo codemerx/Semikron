@@ -4,16 +4,17 @@
 @using Syncfusion.Blazor.Grids
 @using SharedLibrary.Data
 
-<SfGrid TValue="@Comment" AllowPaging="true">
-    <SfDataManager AdaptorInstance="@typeof(CommentAdaptor)" Adaptor="Adaptors.CustomAdaptor"></SfDataManager>
+@inject Database db;
 
+
+<SfGrid DataSource="@gridData" AllowPaging="true">
     <GridPageSettings PageSize="15"></GridPageSettings>
 
     <GridTemplates>
         <DetailTemplate>
             @{
-                var comment = context as Comment;
-                <SyncfusionHierarchyDetail PostId="@comment.Id" />
+                var post = context as Post;
+                <SyncfusionGridHierarchyDetail PostId="@post.Id" />
             }
         </DetailTemplate>
     </GridTemplates>
@@ -27,6 +28,10 @@
 </SfGrid>
 
 @code {
+    private List<Post> gridData = new List<Post>();
 
-
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = (await db.GetData()).Posts;
+    }
 }

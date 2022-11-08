@@ -1,43 +1,30 @@
 @page "/syncfusion-grid-virtualization"
 
-@using Syncfusion.Blazor.Data
 @using Syncfusion.Blazor.Grids
 @using SharedLibrary.Data
 
-@inject CommentService CommentService
+@inject Database db;
 
-@if (data == null)
-{
-    <div>Loading...</div>
-}
-else
-{
-    <SfGrid DataSource="@data" Height="500" EnableVirtualization="true" EnableVirtualMaskRow="true"
-        AllowSorting="true" AllowFiltering="true">
-    
-        <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
-        <GridPageSettings PageSize="70"></GridPageSettings>
+<SfGrid DataSource="@gridData" Height="480" EnableVirtualization="true" EnableVirtualMaskRow="true" AllowSorting="true"
+    AllowFiltering="true">
 
-        <GridColumns>
-            <Syncfusion.Blazor.Grids.GridColumn Field="RowNumber" HeaderText="RowNumber" />
-            <Syncfusion.Blazor.Grids.GridColumn Field="Id" HeaderText="Id" />
-            <Syncfusion.Blazor.Grids.GridColumn Field="PostId" HeaderText="Post Id" />
-            <Syncfusion.Blazor.Grids.GridColumn Field="Name" HeaderText="Name" />
-            <Syncfusion.Blazor.Grids.GridColumn Field="Email" HeaderText="Email" />
-        </GridColumns>
-    </SfGrid>
-}
+    <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+    <GridPageSettings PageSize="70"></GridPageSettings>
+
+    <GridColumns>
+        <Syncfusion.Blazor.Grids.GridColumn Field="RowNumber" HeaderText="RowNumber" />
+        <Syncfusion.Blazor.Grids.GridColumn Field="Id" HeaderText="Id" />
+        <Syncfusion.Blazor.Grids.GridColumn Field="PostId" HeaderText="Post Id" />
+        <Syncfusion.Blazor.Grids.GridColumn Field="Name" HeaderText="Name" />
+        <Syncfusion.Blazor.Grids.GridColumn Field="Email" HeaderText="Email" />
+    </GridColumns>
+</SfGrid>
 
 @code {
-    private Comment[]? data;
+    private List<Comment> gridData = new List<Comment>();
 
-    protected override async Task OnInitializedAsync()
+	protected override async Task OnInitializedAsync()
     {
-        var res = await CommentService.GetRepeatedCommentsAsync(2000, new()
-        {
-            Limit = 500,
-        });
-
-        data = res.Data;
+        gridData = db.Repeat(2000, (await db.GetData()).Comments);
     }
 }

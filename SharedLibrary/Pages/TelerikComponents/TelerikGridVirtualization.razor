@@ -1,7 +1,7 @@
 ﻿@page "/telerik-grid-virtualization"
 @using SharedLibrary.Data
 
-@inject CommentService CommentService
+@inject Database db
 
 <h3>CommentsComponent</h3>
 
@@ -10,12 +10,13 @@
 </ul>
 
 
-<TelerikGrid Data="@data"
+<TelerikGrid Data="@gridData"
 			 FilterMode="@GridFilterMode.FilterMenu" 
 			 ScrollMode="@GridScrollMode.Virtual"
 			 Height="480px"
 			 Sortable="true"
-			 RowHeight="60">
+			 PageSize="13"
+			 RowHeight="35">
 	<GridColumns>
 		<GridColumn Field="RowNumber" Title="Row Number" />
 		<GridColumn Field="Id" Title="Id" />
@@ -26,15 +27,10 @@
 </TelerikGrid>
 
 @code {
-	private Comment[] data;
+	private List<Comment> gridData = new List<Comment>();
 
 	protected override async Task OnInitializedAsync()
-	{
-		var res = await CommentService.GetRepeatedCommentsAsync(2000, new()
-			{
-				Limit = 500,
-			});
-
-		data = res.Data;
-	}
+    {
+        gridData = db.Repeat(2000, (await db.GetData()).Comments);
+    }
 }
