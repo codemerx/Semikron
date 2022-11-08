@@ -5,22 +5,19 @@
 
 @inject Database db
 
-<SfTreeGrid DataSource="@gridData" IdMapping="TaskId" ParentIdMapping="ParentId" TreeColumnIndex="1" AllowPaging="true"
+<SfTreeGrid DataSource="@gridData" IdMapping="TaskId" ParentIdMapping="ParentId" TreeColumnIndex="0" AllowPaging="true"
     AllowSorting="true" AllowMultiSorting="true"
     AllowFiltering="true">
 
-    <TreeGridPageSettings PageSize="2"></TreeGridPageSettings>
+    <TreeGridPageSettings PageSize="15" PageSizeMode="PageSizeMode.All"></TreeGridPageSettings>
     <TreeGridFilterSettings HierarchyMode="@FilterHierarchyMode.Parent" Type="Syncfusion.Blazor.TreeGrid.FilterType.Menu"></TreeGridFilterSettings>
 
     <TreeGridColumns>
-        <TreeGridColumn Field="TaskId" HeaderText="Task ID" Width="80"
-            TextAlign="Syncfusion.Blazor.Grids.TextAlign.Right"></TreeGridColumn>
-        <TreeGridColumn Field="TaskName" HeaderText="Task Name" Width="160"></TreeGridColumn>
-        <TreeGridColumn Field="Duration" HeaderText="Duration" Width="100"
-            TextAlign="Syncfusion.Blazor.Grids.TextAlign.Right"></TreeGridColumn>
-        <TreeGridColumn Field="Progress" HeaderText="Progress" Width="100"
-            TextAlign="Syncfusion.Blazor.Grids.TextAlign.Right"></TreeGridColumn>
-        <TreeGridColumn Field="Priority" HeaderText="Priority" Width="80"></TreeGridColumn>
+        <TreeGridColumn Field="TaskId" HeaderText="Task ID"></TreeGridColumn>
+        <TreeGridColumn Field="TaskName" HeaderText="Task Name"></TreeGridColumn>
+        <TreeGridColumn Field="Duration" HeaderText="Duration"></TreeGridColumn>
+        <TreeGridColumn Field="Progress" HeaderText="Progress"></TreeGridColumn>
+        <TreeGridColumn Field="Priority" HeaderText="Priority"></TreeGridColumn>
     </TreeGridColumns>
 </SfTreeGrid>
 
