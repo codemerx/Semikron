@@ -3,13 +3,10 @@
 
 @inject Database db
 
-<TelerikTreeList Data="@gridData"
-                 IdField="TaskId"
-                 ParentIdField="ParentId"
-                 Pageable="true"
-                 Sortable="true"
-                 PageSize="7"
-                 FilterMode="@TreeListFilterMode.FilterMenu">
+<TelerikTreeList Data="@gridData" IdField="TaskId" ParentIdField="ParentId" Pageable="true" PageSize="7"
+    Sortable="true" SortMode="@SortMode.Multiple"
+    FilterMode="@TreeListFilterMode.FilterMenu">
+
     <TreeListColumns>
         <TreeListColumn Expandable="true" Field="TaskId" Title="Task ID" />
         <TreeListColumn Field="TaskName" Title="Task Name" />

@@ -5,10 +5,12 @@
 
 @inject Database db
 
-<SfTreeGrid DataSource="@gridData" IdMapping="TaskId" ParentIdMapping="ParentId" TreeColumnIndex="1"
-    AllowPaging="true">
+<SfTreeGrid DataSource="@gridData" IdMapping="TaskId" ParentIdMapping="ParentId" TreeColumnIndex="1" AllowPaging="true"
+    AllowSorting="true" AllowMultiSorting="true"
+    AllowFiltering="true">
 
     <TreeGridPageSettings PageSize="2"></TreeGridPageSettings>
+    <TreeGridFilterSettings HierarchyMode="@FilterHierarchyMode.Parent" Type="Syncfusion.Blazor.TreeGrid.FilterType.Menu"></TreeGridFilterSettings>
 
     <TreeGridColumns>
         <TreeGridColumn Field="TaskId" HeaderText="Task ID" Width="80"
