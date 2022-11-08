@@ -9,6 +9,7 @@
 |Data grid virtualization|:heavy_check_mark: [^telerik_virtualization], [^virtualization_limits]|:heavy_check_mark: [^virtualization_limits], [^syncfusion_virtualization]|
 |Data grid hierarchy [^hierarchy]|:heavy_check_mark:|:heavy_check_mark:|
 |Tree grid server-side pagination/sorting/filtering|:x:/:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_tree_grid_server_side]|
+|Tree grid client-side pagination/sorting/filtering|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|
 |Tree grid virtualization|:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|
 |Charts Line/Area/Bar/Stacked Bar/Combined|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_chart_overlap_problem]|
 |Notes||[^syncfusion]|
