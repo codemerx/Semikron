@@ -5,13 +5,32 @@
         <ChartSeries Type="ChartSeriesType.Line" Name="Downloads" Data="@downloads">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
-        <ChartSeries Type="ChartSeriesType.Line" Name="Streams" Data="@streams"></ChartSeries>
 
-        <ChartSeries Type="ChartSeriesType.Area" Name="CPU" Data="@cpu">
+        <ChartSeries Type="ChartSeriesType.Line" Name="Streams" Data="@streams">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
 
-        <ChartSeries Type="ChartSeriesType.Bar" Name="Issues" Data="@issues">
+        <ChartSeries Type="ChartSeriesType.Line" Name="Issues" Data="@issues">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+    </ChartSeriesItems>
+
+    <ChartCategoryAxes>
+        <ChartCategoryAxis Categories="@years" />
+    </ChartCategoryAxes>
+</TelerikChart>
+
+<TelerikChart>
+    <ChartSeriesItems>
+        <ChartSeries Type="ChartSeriesType.Area" Name="Downloads" Data="@downloads">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+
+        <ChartSeries Type="ChartSeriesType.Area" Name="Streams" Data="@streams">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+
+        <ChartSeries Type="ChartSeriesType.Area" Name="Issues" Data="@issues">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
     </ChartSeriesItems>
@@ -61,10 +80,30 @@
     <ChartCategoryAxes>
         <ChartCategoryAxis Categories="@years" />
     </ChartCategoryAxes>
+</TelerikChart>
 
-    <ChartValueAxes>
-        <ChartValueAxis Color="green"></ChartValueAxis>
-    </ChartValueAxes>
+<TelerikChart>
+    <ChartSeriesItems>
+        <ChartSeries Type="ChartSeriesType.Line" Name="Downloads" Data="@downloads">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+
+        <ChartSeries Type="ChartSeriesType.Line" Name="Streams" Data="@streams">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+
+        <ChartSeries Type="ChartSeriesType.Area" Name="CPU" Data="@cpu">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+
+        <ChartSeries Type="ChartSeriesType.Bar" Name="Issues" Data="@issues">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+    </ChartSeriesItems>
+
+    <ChartCategoryAxes>
+        <ChartCategoryAxis Categories="@years" />
+    </ChartCategoryAxes>
 </TelerikChart>
 
 

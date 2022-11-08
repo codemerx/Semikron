@@ -4,9 +4,7 @@
 
 <SfChart>
     <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
-
     <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
-
     <ChartLegendSettings Visible="true" Position="LegendPosition.Right" />
 
     <ChartSeriesCollection>
@@ -14,22 +12,36 @@
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
-
         <Syncfusion.Blazor.Charts.ChartSeries DataSource="@streams" Name="Streams" XName="X" YName="Y"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
-
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@cpu" Name="CPU" XName="X" YName="Y"
-            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.1" Fill="red">
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@issues" Name="Issues" XName="X" YName="Y"
+            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
+    </ChartSeriesCollection>
+</SfChart>
 
+<SfChart>
+    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+    <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+    <ChartLegendSettings Visible="true" Position="LegendPosition.Right" />
+
+    <ChartSeriesCollection>
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@downloads" Name="Downloads" XName="X" YName="Y"
+            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.7">
+            <ChartMarker Visible="true" Height="10" Width="10" />
+        </Syncfusion.Blazor.Charts.ChartSeries>
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@streams" Name="Streams" XName="X" YName="Y"
+            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.7">
+            <ChartMarker Visible="true" Height="10" Width="10" />
+        </Syncfusion.Blazor.Charts.ChartSeries>
         <Syncfusion.Blazor.Charts.ChartSeries DataSource="@issues" Name="Issues" XName="X" YName="Y"
-            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Column" Opacity="0.5" Fill="blue">
+            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.7">
+            <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
     </ChartSeriesCollection>
-
 </SfChart>
 
 <SfChart>
@@ -73,6 +85,36 @@
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Column">
         </Syncfusion.Blazor.Charts.ChartSeries>
     </ChartSeriesCollection>
+</SfChart>
+
+<SfChart>
+    <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+
+    <ChartTooltipSettings Enable="true"></ChartTooltipSettings>
+
+    <ChartLegendSettings Visible="true" Position="LegendPosition.Right" />
+
+    <ChartSeriesCollection>
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@cpu" Name="CPU" XName="X" YName="Y"
+            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.1" Fill="red">
+            <ChartMarker Visible="true" Height="10" Width="10" />
+        </Syncfusion.Blazor.Charts.ChartSeries>
+
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@issues" Name="Issues" XName="X" YName="Y"
+            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Column" Opacity="0.5" Fill="blue">
+        </Syncfusion.Blazor.Charts.ChartSeries>
+
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@downloads" Name="Downloads" XName="X" YName="Y"
+            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
+            <ChartMarker Visible="true" Height="10" Width="10" />
+        </Syncfusion.Blazor.Charts.ChartSeries>
+
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@streams" Name="Streams" XName="X" YName="Y"
+            Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
+            <ChartMarker Visible="true" Height="10" Width="10" />
+        </Syncfusion.Blazor.Charts.ChartSeries>
+    </ChartSeriesCollection>
+
 </SfChart>
 
 @code {
