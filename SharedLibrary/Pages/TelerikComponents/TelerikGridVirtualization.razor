@@ -12,7 +12,8 @@
 
 <TelerikGrid Data="@gridData" ScrollMode="@GridScrollMode.Virtual" Height="480px" PageSize="13" RowHeight="35" 
 	Sortable="true" SortMode="@SortMode.Multiple" 
-	FilterMode="Telerik.Blazor.GridFilterMode.FilterMenu">
+	FilterMode="Telerik.Blazor.GridFilterMode.FilterMenu"
+	Groupable="true" LoadGroupsOnDemand="true">
 	
 	<GridColumns>
 		<GridColumn Field="RowNumber" Title="Row Number" />
