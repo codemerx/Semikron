@@ -5,8 +5,10 @@
 
 @inject Database db;
 
-<SfGrid DataSource="@gridData" Height="480" EnableVirtualization="true" EnableVirtualMaskRow="true" AllowSorting="true"
-    AllowFiltering="true">
+<p>To sort multiple columns, press and hold the <b>CTRL</b> key and click the column header. </p>
+
+<SfGrid DataSource="@gridData" Height="480" EnableVirtualization="true" EnableVirtualMaskRow="true"
+    AllowSorting="true" AllowMultiSorting="true" AllowFiltering="true">
 
     <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
     <GridPageSettings PageSize="70"></GridPageSettings>

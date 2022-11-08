@@ -10,13 +10,9 @@
 </ul>
 
 
-<TelerikGrid Data="@gridData"
-			 FilterMode="@GridFilterMode.FilterMenu" 
-			 ScrollMode="@GridScrollMode.Virtual"
-			 Height="480px"
-			 Sortable="true"
-			 PageSize="13"
-			 RowHeight="35">
+<TelerikGrid Data="@gridData" ScrollMode="@GridScrollMode.Virtual" Height="480px" PageSize="13" RowHeight="35" 
+	Sortable="true" SortMode="@SortMode.Multiple" FilterMode="@GridFilterMode.FilterMenu">
+	
 	<GridColumns>
 		<GridColumn Field="RowNumber" Title="Row Number" />
 		<GridColumn Field="Id" Title="Id" />

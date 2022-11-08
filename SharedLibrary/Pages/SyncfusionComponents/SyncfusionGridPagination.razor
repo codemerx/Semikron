@@ -5,7 +5,11 @@
 
 @inject Database db;
 
-<SfGrid DataSource="@gridData" AllowPaging="true">
+<p>To sort multiple columns, press and hold the <b>CTRL</b> key and click the column header. </p>
+
+<SfGrid DataSource="@gridData" AllowPaging="true"
+    AllowSorting="true" AllowMultiSorting="true">
+    
     <GridPageSettings PageSize="15"></GridPageSettings>
 
     <GridColumns>
