@@ -19,7 +19,7 @@ namespace SharedLibrary.Data
             if (loaded) return;
 
             data = await ReadData();
-            data.TaskInfo = GetTree(150);
+            data.TaskInfo = GetTree(1500);
             loaded = true;
         }
 

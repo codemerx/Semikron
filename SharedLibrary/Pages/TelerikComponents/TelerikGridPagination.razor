@@ -24,6 +24,6 @@
 
 	protected override async Task OnInitializedAsync()
     {
-        gridData = db.Repeat(200, (await db.GetData()).Comments);
+        gridData = db.Repeat(2000, (await db.GetData()).Comments);
     }
 }
