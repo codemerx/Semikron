@@ -10,7 +10,7 @@
 |Data grid hierarchy [^hierarchy]|:heavy_check_mark:|:heavy_check_mark:|
 |Tree grid server-side pagination/sorting/filtering|:x:/:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_tree_grid_server_side]|
 |Tree grid virtualization|:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|
-|Charts Line/Area/Bar/Stacked Bar/Combined|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|
+|Charts Line/Area/Bar/Stacked Bar/Combined|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_chart_overlap_problem]|
 |Notes||[^syncfusion]|
 
 Legend:
@@ -26,3 +26,4 @@ Legend:
 [^syncfusion]: It has separate nuget package for each component. Can be good for wasm project.
 [^syncfusion_virtualization]: Also works with server side pagination. It loads data while scrolling. But has problem like does not load last 10-20 items.
 [^syncfusion_tree_grid_server_side]: Document says, with CustomDataManager only Self-Referential(Flat) type data is supported. Hierarchical data has limited customizations.
+[^syncfusion_chart_overlap_problem]: Charts can be hide each other when overlaps. Changing opacity solves the problem. This overlapping sometimes can cause tooltip problem (hovering does not work). Changing the drawing order can be solves problem.
