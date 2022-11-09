@@ -56,7 +56,7 @@
     private void InitLinks(){
         menuLinks = new []{
             new ExpandMenu{
-                Name= "Telerik",
+                Name="Telerik",
                 Items = new []{
                     new SubMenu{
                         Name="Grid Pagination",
@@ -81,7 +81,7 @@
                 }
             },
             new ExpandMenu{
-                Name= "Syncfusion",
+                Name="Syncfusion",
                 Items = new []{
                     new SubMenu{
                         Name="Grid Pagination",
@@ -108,7 +108,16 @@
                         Href="syncfusion-charts"
                     },
                 }
-            }
+            },
+            new ExpandMenu(){
+                Name="ComponentOne/GrapeCity",
+                Items = new []{
+                    new SubMenu{
+                        Name="Grid Virtualization",
+                        Href="grapecity-grid-virtualization"
+                    },
+                }
+            },
         };
     }
     
