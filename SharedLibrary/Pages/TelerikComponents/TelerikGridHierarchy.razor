@@ -4,7 +4,7 @@
 @inject Database db;
 
 <TelerikGrid Data="@gridData" Pageable="true" PageSize="15"
-    Sortable="true" SortMode="@SortMode.Multiple" 
+    Sortable="true" SortMode="Telerik.Blazor.SortMode.Multiple" 
 	FilterMode="Telerik.Blazor.GridFilterMode.FilterMenu"
 	Groupable="true">
 
@@ -14,9 +14,9 @@
         }
     </DetailTemplate>
     <GridColumns>
-        <GridColumn Field="Id" Title="Id" />
-        <GridColumn Field="UserId" Title="UserId" />
-        <GridColumn Field="Title" Title="Title" />
+        <Telerik.Blazor.Components.GridColumn Field="Id" Title="Id" />
+        <Telerik.Blazor.Components.GridColumn Field="UserId" Title="UserId" />
+        <Telerik.Blazor.Components.GridColumn Field="Title" Title="Title" />
     </GridColumns>
 </TelerikGrid>
 

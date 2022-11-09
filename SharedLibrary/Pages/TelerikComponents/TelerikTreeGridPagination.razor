@@ -4,15 +4,15 @@
 @inject Database db
 
 <TelerikTreeList Data="@gridData" IdField="TaskId" ParentIdField="ParentId" Pageable="true" PageSize="15"
-    Sortable="true" SortMode="@SortMode.Multiple"
-    FilterMode="@TreeListFilterMode.FilterMenu">
+    Sortable="true" SortMode="Telerik.Blazor.SortMode.Multiple"
+    FilterMode="Telerik.Blazor.TreeListFilterMode.FilterMenu">
 
     <TreeListColumns>
-        <TreeListColumn Expandable="true" Field="TaskId" Title="Task ID" />
-        <TreeListColumn Field="TaskName" Title="Task Name" />
-        <TreeListColumn Field="Duration" Title="Duration"/>
-        <TreeListColumn Field="Progress" Title="Progress"/>
-        <TreeListColumn Field="Priority" Title="Priority"/>
+        <Telerik.Blazor.Components.TreeListColumn Expandable="true" Field="TaskId" Title="Task ID" />
+        <Telerik.Blazor.Components.TreeListColumn Field="TaskName" Title="Task Name" />
+        <Telerik.Blazor.Components.TreeListColumn Field="Duration" Title="Duration"/>
+        <Telerik.Blazor.Components.TreeListColumn Field="Progress" Title="Progress"/>
+        <Telerik.Blazor.Components.TreeListColumn Field="Priority" Title="Priority"/>
     </TreeListColumns>
 </TelerikTreeList>
 

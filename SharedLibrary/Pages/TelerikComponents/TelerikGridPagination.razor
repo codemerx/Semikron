@@ -6,16 +6,16 @@
 <h3>CommentsComponent</h3>
 
 <TelerikGrid Data="@gridData" Pageable="true" PageSize="15"
-	Sortable="true" SortMode="@SortMode.Multiple" 
+	Sortable="true" SortMode="Telerik.Blazor.SortMode.Multiple" 
 	FilterMode="Telerik.Blazor.GridFilterMode.FilterMenu"
 	Groupable="true">
 	
 	<GridColumns>
-		<GridColumn Field="RowNumber" Title="Row Number" />
-		<GridColumn Field="Id" Title="Id" />
-		<GridColumn Field="PostId" Title="PostId" />
-		<GridColumn Field="Name" Title="Name" />
-		<GridColumn Field="Email" Title="Email" />
+		<Telerik.Blazor.Components.GridColumn Field="RowNumber" Title="Row Number" />
+		<Telerik.Blazor.Components.GridColumn Field="Id" Title="Id" />
+		<Telerik.Blazor.Components.GridColumn Field="PostId" Title="PostId" />
+		<Telerik.Blazor.Components.GridColumn Field="Name" Title="Name" />
+		<Telerik.Blazor.Components.GridColumn Field="Email" Title="Email" />
 	</GridColumns>
 </TelerikGrid>
 

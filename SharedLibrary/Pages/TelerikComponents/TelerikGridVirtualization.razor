@@ -10,17 +10,17 @@
 </ul>
 
 
-<TelerikGrid Data="@gridData" ScrollMode="@GridScrollMode.Virtual" Height="480px" PageSize="13" RowHeight="35" 
-	Sortable="true" SortMode="@SortMode.Multiple" 
+<TelerikGrid Data="gridData" ScrollMode="Telerik.Blazor.GridScrollMode.Virtual" Height="480px" PageSize="13" RowHeight="35" 
+	Sortable="true" SortMode="Telerik.Blazor.SortMode.Multiple" 
 	FilterMode="Telerik.Blazor.GridFilterMode.FilterMenu"
 	Groupable="true" LoadGroupsOnDemand="true">
 	
 	<GridColumns>
-		<GridColumn Field="RowNumber" Title="Row Number" />
-		<GridColumn Field="Id" Title="Id" />
-		<GridColumn Field="PostId" Title="PostId" />
-		<GridColumn Field="Name" Title="Name" />
-		<GridColumn Field="Email" Title="Email" />
+		<Telerik.Blazor.Components.GridColumn Field="RowNumber" Title="Row Number" />
+		<Telerik.Blazor.Components.GridColumn Field="Id" Title="Id" />
+		<Telerik.Blazor.Components.GridColumn Field="PostId" Title="PostId" />
+		<Telerik.Blazor.Components.GridColumn Field="Name" Title="Name" />
+		<Telerik.Blazor.Components.GridColumn Field="Email" Title="Email" />
 	</GridColumns>
 </TelerikGrid>
 
