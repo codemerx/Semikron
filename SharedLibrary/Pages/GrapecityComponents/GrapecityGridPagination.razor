@@ -1,0 +1,35 @@
+@page "/grapecity-grid-pagination"
+
+@using Data
+@using C1.Blazor.Grid
+@using C1.DataCollection
+
+@inject Database db
+
+<FlexGrid ItemsSource="gridData" AutoGenerateColumns="false" DefaultColumnWidth="C1.Blazor.Grid.GridLength.Star"
+    IsVirtualizationEnabled="false" AllowSorting="true" ShowSort="true"
+    AllowDragging="C1.Blazor.Grid.GridAllowDragging.None">
+    <FlexGridColumns>
+        <C1.Blazor.Grid.GridColumn Binding="RowNumber" Header="Row Number" />
+        <C1.Blazor.Grid.GridColumn Binding="Id" Header="Id" />
+        <C1.Blazor.Grid.GridColumn Binding="PostId" Header="Post Id" />
+        <C1.Blazor.Grid.GridColumn Binding="Name" Header="Name" />
+        <C1.Blazor.Grid.GridColumn Binding="Email" Header="Email" />
+    </FlexGridColumns>
+</FlexGrid>
+<C1.Blazor.DataPager.C1DataPager Source="gridData" />
+
+@code {
+    private C1PagedDataCollection<Comment> gridData;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var data = db.Repeat(2000, (await db.GetData()).Comments).Take(50).ToList();
+        
+        gridData = new C1PagedDataCollection<Comment>(new CustomC1VirtualDataCollection<Comment>(data));
+        gridData.PageSize = 15;
+    }
+}
+
+
+
