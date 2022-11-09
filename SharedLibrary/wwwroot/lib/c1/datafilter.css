@@ -1,0 +1,65 @@
+.c1-datafilter .c1-filter-presenter {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 8px;
+    margin: 0px;
+    display: block;
+    width: max-content;
+}
+
+.c1-datafilter .c1-conditional-filter-presenter {
+    padding: 16px;
+}
+
+/* Reset browser defaults for <label> element.*/
+.c1-filter-presenter label {
+    font-weight: initial;
+    margin: 0;
+    padding: 0;
+}
+
+.c1-filter-presenter .nested-elem {
+    padding: 8px;
+}
+
+.c1-filter-presenter .nested-elem-inline {
+    padding: 8px;
+    display: inline-block;
+}
+
+.c1-filter-presenter .checklist-items-section{
+    padding-left: 16px;
+}
+
+.c1-filter-presenter .checkbox-cont{
+    vertical-align:middle;
+}
+
+.c1-filter-presenter-from-label {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.c1-filter-presenter-to-label {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.c1-filter-presenter-slider {
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+}
+
+.c1-filter-presenter button:focus-visible {
+    outline-style: auto;
+    border-radius: inherit;
+}
+.c1-conditional-filter-presenter .c1-menu .popup-content-container {
+    min-width: max-content;
+}
+
+.c1-conditional-filter-presenter .c1-menu .popup-content-container .c1ScrollViewer {
+    width: auto;
+}

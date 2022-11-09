@@ -1,0 +1,45 @@
+.c1-date-picker {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    background: #fefefe;
+    display: inline-block;
+}
+
+
+
+
+.c1-time-panel {
+    padding: 11px;
+    min-width: 200px;
+}
+
+.c1-time-container {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .c1-time-container::-webkit-scrollbar {
+        display: none !important;
+    }
+
+.c1-time-available-item {
+    cursor: pointer;
+}
+
+.c1-time-disabled-item {
+    color: #d3d3d3;
+}
+
+.c1-time-item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.c1-datetime-textbox {
+    width: 100%;
+}

@@ -1,0 +1,97 @@
+.flexgrid-cell {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 8px;
+    border-style: solid;
+    border-width: 1px 0px 1px 0px;
+    margin: -0.5px 0 -0.5px 0;
+    border-color: #C7C7CC;
+    background: #fff;
+    color: #000;
+    outline: 0;
+    display: flex;
+    align-items: center;
+}
+
+.flexgrid {
+    cursor: default;
+}
+
+.flexgrid-cell .grid-filter-cell-dropdown-content .c1ScrollViewer{
+    width: auto;
+}
+
+.flexgrid-cell .popup-content-container {
+    max-width: max-content;
+    min-width: 170px;
+}
+
+.flexgrid-cell .outlined-drop-down {
+    background: inherit;
+    color: inherit;
+}
+
+.flexgrid-cell .dropdown-popup {
+    color: black;
+}
+
+.flexgrid-cell .column-header-options-container {
+    display: none;
+}
+
+.flexgrid-cell:hover .column-header-options-container {
+    display: block;
+}
+
+.flexgrid-cell .grid-column-options-menu>.c1-menu-item>.custom-template-container {
+    padding: 0;
+    cursor: auto;
+}
+
+div.column-before-droppable::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    z-index: 10;
+    height: 100%;
+    border-left: 4px solid #8AC2DE;
+}
+div.column-after-droppable::after {
+    content: "";
+    position: absolute;
+    right: 0px;
+    z-index: 10;
+    height: 100%;
+    border-left: 4px solid #8AC2DE;
+}
+div.row-before-droppable::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100%;
+    border-top: 4px solid #8AC2DE;
+}
+
+div.row-after-droppable::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100%;
+    border-bottom: 4px solid #8AC2DE;
+}
+
+/* Disables the selection */
+.disableselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge*/
+    user-select: none; /* Non-prefixed version, currently 
+                                  not supported by any browser */
+}

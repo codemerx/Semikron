@@ -1,0 +1,121 @@
+
+div.flex-chart-tooltip {
+    box-sizing: border-box;
+    max-width: 400px;
+    position: absolute;
+    padding: 4px 6px;
+    color: black;
+    background: white;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 2px;
+    pointer-events: none;
+    box-shadow: 0 6px 13px rgba(0,0,0,.2)
+}
+
+div.flex-chart-scrollbar {
+    position: absolute;
+    margin-top:3px;
+    height: 16px;
+    background-color: #eaeaea;
+}
+
+div.flex-chart-scrollbar-handle {
+    width: 16px;
+    height: 22px;
+    background-color: #bdbdbd;
+    border: 1.5px solid #999;
+    border-radius: 6px;
+    position: absolute;
+    display: block;
+    margin-left: -8px;
+}
+
+div.flex-chart-scrollbar-middle-handle {
+    background-color: #bdbdbd;
+    border-radius: 2px;
+    position: absolute;
+    display: block;
+    margin-top: 3px;
+    height: 16px;
+}
+
+div.flex-chart-vscrollbar {
+    position:absolute;
+    width: 80%;
+    margin-left: 10%;
+    background-color: #eaeaea;
+}
+
+div.flex-chart-vscrollbar-handle {
+    width: 22px;
+    height: 16px;
+    background-color: #bdbdbd;
+    border: 1.5px solid #999;
+    border-radius: 6px;
+    position: absolute;
+    display: block;
+    margin-top: -8px;
+}
+
+div.flex-chart-vscrollbar-middle-handle {
+    background-color: #bdbdbd;
+    border-radius: 2px;
+    position: absolute;
+    display: block;
+    width: 80%;
+    margin-left:10%;
+}
+
+/* range selector - horizontal */
+
+div.flex-chart-range-selector {
+    position: absolute;
+    margin-top: 3px;
+    height: 100%;
+    background-color: transparent;
+}
+
+div.flex-chart-range-selector-handle {
+    width: 16px;
+    height: 32px;
+    background-color: #bdbdbd;
+    border: 1.5px solid #999;
+    border-radius: 6px;
+    position: absolute;
+    display: block;
+    margin-left: -8px;
+}
+
+div.flex-chart-range-selector-middle-handle {
+    background-color: rgb(189 189 189 / 0.20);
+    position: absolute;
+    display: block;
+    height: 100%;
+}
+
+/* range selector - vertical */
+
+div.flex-chart-vrange-selector {
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+    background-color: transparent;
+}
+
+div.flex-chart-vrange-selector-handle {
+    width: 22px;
+    height: 16px;
+    background-color: #bdbdbd;
+    border: 1.5px solid #999;
+    border-radius: 6px;
+    position: absolute;
+    display: block;
+    margin-top: -8px;
+}
+
+div.flex-chart-vrange-selector-middle-handle {
+    background-color: rgb(189 189 189 / 0.20);
+    position: absolute;
+    display: block;
+    width: 100%;
+}

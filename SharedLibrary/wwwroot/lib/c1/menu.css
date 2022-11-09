@@ -1,0 +1,38 @@
+.c1-menu-popup>.c1-popup>.overlay>.popup>.popup-content-container>.c1ScrollViewer {
+    overflow: overlay;
+}
+
+.c1-menu-item {
+    cursor:pointer;
+    min-height: 32px;
+}
+
+.c1-menu-item .inner-container {
+    padding: 8px 16px 8px 8px;
+    min-height: inherit;
+}
+
+.c1-menu-item .icon-container {
+    padding: 0 8px 0 8px;
+}
+
+.c1-menu-item .header-container {
+    padding: 0 8px 0 8px;
+}
+
+.c1-menu-item .hotkey-container {
+    padding: 0 8px 0 8px;
+}
+
+.c1-context-menu .popup:not(.full-screen-popup) {
+    border: 0;
+}
+
+.c1-context-menu .popup-content-container {
+    max-width: max-content;
+    min-width: max-content;
+}
+
+.c1-context-menu .popup-content-container .c1ScrollViewer {
+    width: auto;
+}
