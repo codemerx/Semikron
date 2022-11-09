@@ -6,9 +6,10 @@
 
 @inject Database db
 
+<p>To sort multiple columns, press and hold the <b>CTRL</b> key and click the column header. </p>
+
 <FlexGrid ItemsSource="gridData" AutoGenerateColumns="false" DefaultColumnWidth="C1.Blazor.Grid.GridLength.Star"
-    IsVirtualizationEnabled="true" AllowSorting="true" Style="@(" max-height:480px")"
-    AllowDragging="C1.Blazor.Grid.GridAllowDragging.None">
+    IsVirtualizationEnabled="true" Style="@("max-height:480px")" AllowDragging="C1.Blazor.Grid.GridAllowDragging.None">
     <FlexGridColumns>
         <C1.Blazor.Grid.GridColumn Binding="RowNumber" Header="Row Number" />
         <C1.Blazor.Grid.GridColumn Binding="Id" Header="Id" />
@@ -19,33 +20,40 @@
 </FlexGrid>
 
 @code {
-
     C1VirtualDataCollection<Comment> gridData;
 
     protected override async Task OnInitializedAsync()
     {
         var data = db.Repeat(2000, (await db.GetData()).Comments);
-        gridData = new VirtualModeDataCollection(data);
+        gridData = new VirtualModeDataCollection(new C1DataCollection<Comment>(data));
         gridData.PageSize = 15;
     }
 
     public class VirtualModeDataCollection : C1VirtualDataCollection<Comment>
     {
-        readonly List<Comment> data;
+        readonly C1DataCollection<Comment> data;
 
-        public VirtualModeDataCollection(List<Comment> data)
+        public VirtualModeDataCollection(C1DataCollection<Comment> data)
         {
             this.data = data;
         }
 
-        protected override async Task<Tuple<int, IReadOnlyList<Comment>>> GetPageAsync(int pageIndex, int startingIndex, int count, IReadOnlyList<SortDescription> sortDescriptions = null,
-            FilterExpression filterExpression = null, CancellationToken cancellationToken = default(CancellationToken))
+        protected override async Task<Tuple<int, IReadOnlyList<Comment>>> GetPageAsync(int pageIndex, int startingIndex, int
+        count, IReadOnlyList<SortDescription> sortDescriptions = null,
+        FilterExpression filterExpression = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            //await Task.Delay(500, cancellationToken);//Simulates network traffic.
-            
-            var res = data.Skip(pageIndex * count).Take(count).ToList();
-            
+            if (sortDescriptions != null)
+            {
+                await data.SortAsync(sortDescriptions.ToArray());
+            }
+
+            var res = data.Skip(pageIndex * count).Take(count).Cast<Comment>().ToList();
             return new Tuple<int, IReadOnlyList<Comment>>(data.Count, res);
+        }
+
+        public override bool CanSort(params SortDescription[] sortDescriptions)
+        {
+            return data.CanSort(sortDescriptions);
         }
     }
 }
