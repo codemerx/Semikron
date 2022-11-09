@@ -9,7 +9,8 @@
 <p>To sort multiple columns, press and hold the <b>CTRL</b> key and click the column header. </p>
 
 <FlexGrid ItemsSource="gridData" AutoGenerateColumns="false" DefaultColumnWidth="C1.Blazor.Grid.GridLength.Star"
-    IsVirtualizationEnabled="true" Style="@("max-height:480px")" AllowDragging="C1.Blazor.Grid.GridAllowDragging.None">
+    IsVirtualizationEnabled="true" Style="@("max-height:480px")" AllowDragging="C1.Blazor.Grid.GridAllowDragging.None"
+    HeadersVisibility="C1.Blazor.Grid.GridHeadersVisibility.All">
     <FlexGridColumns>
         <C1.Blazor.Grid.GridColumn Binding="RowNumber" Header="Row Number" />
         <C1.Blazor.Grid.GridColumn Binding="Id" Header="Id" />
@@ -47,6 +48,11 @@
                 await data.SortAsync(sortDescriptions.ToArray());
             }
 
+            if (filterExpression != null)
+            {
+                await data.FilterAsync(filterExpression);
+            }
+
             var res = data.Skip(pageIndex * count).Take(count).Cast<Comment>().ToList();
             return new Tuple<int, IReadOnlyList<Comment>>(data.Count, res);
         }
@@ -54,6 +60,11 @@
         public override bool CanSort(params SortDescription[] sortDescriptions)
         {
             return data.CanSort(sortDescriptions);
+        }
+
+        public override bool CanFilter(FilterExpression filterExpression)
+        {
+            return data.CanFilter(filterExpression);
         }
     }
 }
