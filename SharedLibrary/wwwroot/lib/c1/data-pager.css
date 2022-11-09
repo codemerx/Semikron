@@ -1,0 +1,15 @@
+.c1DataPagerBtn {
+    min-width: 33px;
+    border: none;
+    background-color: transparent;
+    padding: 4px;
+    margin: 4px 0;
+}
+
+    .c1DataPagerBtn:disabled {
+        opacity: .65;
+    }
+
+    .c1DataPagerBtn:focus {
+        outline: none;
+    }
