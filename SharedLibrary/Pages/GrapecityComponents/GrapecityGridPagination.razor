@@ -6,8 +6,8 @@
 
 @inject Database db
 
-<FlexGrid ItemsSource="gridData" AutoGenerateColumns="false" DefaultColumnWidth="C1.Blazor.Grid.GridLength.Star"
-    IsVirtualizationEnabled="false" AllowSorting="true" ShowSort="true"
+<FlexGrid ItemsSource="gridData" AutoGenerateColumns="false" 
+    DefaultColumnWidth="C1.Blazor.Grid.GridLength.Star"
     AllowDragging="C1.Blazor.Grid.GridAllowDragging.None">
     <FlexGridColumns>
         <C1.Blazor.Grid.GridColumn Binding="RowNumber" Header="Row Number" />
@@ -24,7 +24,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        var data = db.Repeat(2000, (await db.GetData()).Comments).Take(50).ToList();
+        var data = db.Repeat(2000, (await db.GetData()).Comments);
         
         gridData = new C1PagedDataCollection<Comment>(new CustomC1VirtualDataCollection<Comment>(data));
         gridData.PageSize = 15;

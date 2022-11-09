@@ -9,8 +9,8 @@
 <p>To sort multiple columns, press and hold the <b>CTRL</b> key and click the column header. </p>
 
 <FlexGrid ItemsSource="gridData" AutoGenerateColumns="false" DefaultColumnWidth="C1.Blazor.Grid.GridLength.Star"
-    IsVirtualizationEnabled="true" Style="@("max-height:480px")" AllowDragging="C1.Blazor.Grid.GridAllowDragging.None"
-    HeadersVisibility="C1.Blazor.Grid.GridHeadersVisibility.All">
+    Style="@("max-height:480px")" 
+    AllowDragging="C1.Blazor.Grid.GridAllowDragging.None">
     <FlexGridColumns>
         <C1.Blazor.Grid.GridColumn Binding="RowNumber" Header="Row Number" />
         <C1.Blazor.Grid.GridColumn Binding="Id" Header="Id" />
