@@ -21,50 +21,12 @@
 </FlexGrid>
 
 @code {
-    C1VirtualDataCollection<Comment> gridData;
+    CustomC1VirtualDataCollection<Comment> gridData;
 
     protected override async Task OnInitializedAsync()
     {
         var data = db.Repeat(2000, (await db.GetData()).Comments);
-        gridData = new VirtualModeDataCollection(new C1DataCollection<Comment>(data));
+        gridData = new CustomC1VirtualDataCollection<Comment>(data);
         gridData.PageSize = 15;
-    }
-
-    public class VirtualModeDataCollection : C1VirtualDataCollection<Comment>
-    {
-        readonly C1DataCollection<Comment> data;
-
-        public VirtualModeDataCollection(C1DataCollection<Comment> data)
-        {
-            this.data = data;
-        }
-
-        protected override async Task<Tuple<int, IReadOnlyList<Comment>>> GetPageAsync(int pageIndex, int startingIndex, int
-        count, IReadOnlyList<SortDescription> sortDescriptions = null,
-        FilterExpression filterExpression = null, CancellationToken cancellationToken = default(CancellationToken))
-        {
-            if (sortDescriptions != null)
-            {
-                await data.SortAsync(sortDescriptions.ToArray());
-            }
-
-            if (filterExpression != null)
-            {
-                await data.FilterAsync(filterExpression);
-            }
-
-            var res = data.Skip(pageIndex * count).Take(count).Cast<Comment>().ToList();
-            return new Tuple<int, IReadOnlyList<Comment>>(data.Count, res);
-        }
-
-        public override bool CanSort(params SortDescription[] sortDescriptions)
-        {
-            return data.CanSort(sortDescriptions);
-        }
-
-        public override bool CanFilter(FilterExpression filterExpression)
-        {
-            return data.CanFilter(filterExpression);
-        }
     }
 }
