@@ -134,19 +134,19 @@
     {
         base.OnInitialized();
 
-        downloads = GetChartData(new[] { 30, 35, 40, 45, 40, 35, 30, 10 });
-        streams = GetChartData(new[] { 5, 6, 8, 15, 23, 35, 55, 78 });
-        cpu = GetChartData(new[] { 2, 6, 8, 45, 40, 78, 55, 50 });
-        issues = GetChartData(new[] { 45, 40, 3, 2, 25 });
-        comments = GetChartData(new[] { 15, 6, 32, 28, 38, 35, 2, 6 });
-        likes = GetChartData(new[] { 2, 6, 8, 45, 40, 40, 55 });
-        dislikes = GetChartData(new[] { 0, 0, 0, 5, 55 });
-        sells1 = GetChartData(new[] { 0, 0, 0, 5, 55 });
-        sells2 = GetChartData(new[] { 0, 5, 0, 15, 30 });
-        profit = GetChartData(new[] { 0, 5, 0, 15, 30 });
+        downloads = GetChartData(new int?[] { 30, 35, 40, 45, 40, 35, 30, 10 });
+        streams = GetChartData(new int?[] { 5, 6, 8, 15, 23, 35, 55, 78 });
+        cpu = GetChartData(new int?[] { 2, 6, 8, 45, 40, 78, 55, 50 });
+        issues = GetChartData(new int?[] { 45, 40, 3, 2, 25 });
+        comments = GetChartData(new int?[] { 15, 6, 32, 28, 38, 35, 2, 6 });
+        likes = GetChartData(new int?[] { 2, 6, 8, 45, 40, 40, 55 });
+        dislikes = GetChartData(new int?[] { 0, 0, 0, 5, 55 });
+        sells1 = GetChartData(new int?[] { 0, 0, 0, 5, 55 });
+        sells2 = GetChartData(new int?[] { 0, 5, 0, 15, 30 });
+        profit = GetChartData(new int?[] { 0, 5, 0, 15, 30 });
     }
 
-    private List<ChartData> GetChartData(int[] values)
+    private List<ChartData> GetChartData(int?[] values)
     {
         var index = 0;
         return years.Select(x => new ChartData() { X = x, Y = values.ElementAtOrDefault(index++) }).ToList();
@@ -155,6 +155,6 @@
     public class ChartData
     {
         public string X { get; set; }
-        public double Y { get; set; }
+        public int? Y { get; set; }
     }
 }
