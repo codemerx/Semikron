@@ -7,10 +7,10 @@
 |Data grid server-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation]|
 |Data grid client-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang:|
 |Data grid virtualization|:heavy_check_mark: [^telerik_virtualization], [^virtualization_limits]|:heavy_check_mark: [^virtualization_limits], [^syncfusion_virtualization]|:heavy_check_mark: [^virtualization_limits]|
-|Data grid hierarchy [^hierarchy]|:heavy_check_mark:|:heavy_check_mark:||
-|Tree grid server-side pagination/sorting/filtering|:x:/:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_tree_grid_server_side]||
-|Tree grid client-side pagination/sorting/filtering|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:||
-|Tree grid virtualization|:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:||
+|Data grid hierarchy [^hierarchy]|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+|Tree grid server-side pagination/sorting/filtering|:x:/:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_tree_grid_server_side]|:x:/:x:/:x: [^no_tree_grid]|
+|Tree grid client-side pagination/sorting/filtering|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:x:/:x:/:x: [^no_tree_grid]|
+|Tree grid virtualization|:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|:x: [^no_tree_grid]|
 |Charts Line/Area/Bar/Stacked Bar/Combined|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_chart_overlap_problem]||
 |Notes||[^syncfusion]|[^c1_bad_docs]|
 
@@ -20,6 +20,7 @@ Legend:
 - :interrobang: = Works but has problems
 
 [^hierarchy]: the ability to expand every row and have custom components inside
+[^no_tree_grid]: It doesn't have tree grid
 [^telerik_virtualization]: Does not work with pagination. OnRead does not work properly with virtualization.
 [^virtualization_limits]: Has browser height limit.
 [^telerik_tree_grid_info]: The name is **TreeList** in telerik components
