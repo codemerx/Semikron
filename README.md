@@ -12,7 +12,7 @@
 |Tree grid client-side pagination/sorting/filtering|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:x:/:x:/:x: [^no_tree_grid]|
 |Tree grid virtualization|:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|:x: [^no_tree_grid]|
 |Charts Line/Area/Bar/Stacked Bar/Combined|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_chart_overlap_problem]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^c1_chart_overlap_problem], [^c1_chart_area_no_tooltip]|
-|Notes||[^syncfusion]|[^c1_bad_docs], [^c1_static_file_problem]|
+|Notes||[^syncfusion]|[^c1_bad_docs], [^c1_static_file_problem], [^c1_wasm_performance_problem]|
 
 Legend:
 - :heavy_check_mark: = works
@@ -36,3 +36,4 @@ Legend:
 [^c1_bad_docs]: Documents are not detailed.
 [^c1_grid_implementation]: Combining functionalities are requires extra code. For example paging and sorting.
 [^c1_static_file_problem]: Static files (css, js) do not loaded when used with Razor Class Library.
+[^c1_wasm_performance_problem]: Grid expanding and menus have performance problem in Wasm.
