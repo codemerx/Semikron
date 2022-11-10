@@ -1,0 +1,33 @@
+@using SharedLibrary.Data
+@using C1.Blazor.Grid
+
+@inject Database db;
+
+@if (gridData == null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <FlexGrid ItemsSource="gridData" AutoGenerateColumns="false" DefaultColumnWidth="C1.Blazor.Grid.GridLength.Star"
+    AllowDragging="C1.Blazor.Grid.GridAllowDragging.None" Style="@($"max-height:{Height}px")">
+        <FlexGridColumns>
+            <C1.Blazor.Grid.GridColumn Binding="Id" Header="Id" />
+            <C1.Blazor.Grid.GridColumn Binding="PostId" Header="Post Id" />
+            <C1.Blazor.Grid.GridColumn Binding="Name" Header="Name" />
+            <C1.Blazor.Grid.GridColumn Binding="Email" Header="Email" />
+        </FlexGridColumns>
+    </FlexGrid>
+}
+
+@code {
+    [Parameter] public int PostId { get; set; }
+    [Parameter] public int Height { get; set; }
+    
+    private List<Comment>? gridData = null;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        gridData = (await db.GetData()).Comments.FindAll(x => x.PostId == PostId);
+    }
+}

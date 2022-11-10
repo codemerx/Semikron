@@ -1,0 +1,35 @@
+@page "/grapecity-grid-hierarchy"
+
+@using Data
+@using C1.Blazor.Grid
+@using C1.DataCollection
+
+@inject Database db
+
+<FlexGrid ItemsSource="gridData" AutoGenerateColumns="false" DefaultColumnWidth="C1.Blazor.Grid.GridLength.Star"
+    AllowDragging="C1.Blazor.Grid.GridAllowDragging.None" HeadersVisibility="GridHeadersVisibility.All">
+    <FlexGridColumns>
+        <C1.Blazor.Grid.GridColumn Binding="Id" Header="Id" />
+        <C1.Blazor.Grid.GridColumn Binding="UserId" Header="User Id" />
+        <C1.Blazor.Grid.GridColumn Binding="Title" Header="Title" />
+    </FlexGridColumns>
+
+    <FlexGridBehaviors>
+        <FlexGridDetailProvider TItem="Post" Height="250" DetailVisibilityMode="C1.Blazor.Grid.GridDetailVisibilityMode.ExpandMultiple">
+            <GrapecityGridHierarchyDetail PostId="@context.Id" Height="250"/>
+        </FlexGridDetailProvider>
+    </FlexGridBehaviors>
+</FlexGrid>
+<C1.Blazor.DataPager.C1DataPager Source="gridData" />
+
+@code {
+    private C1PagedDataCollection<Post> gridData;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var data = (await db.GetData()).Posts;
+
+        gridData = new C1PagedDataCollection<Post>(new CustomC1VirtualDataCollection<Post>(data));
+        gridData.PageSize = 15;
+    }
+}
