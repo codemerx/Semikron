@@ -13,6 +13,7 @@ builder.Services.AddSingleton<Database, DBLoaderForServerBlazor>();
 
 builder.Services.AddTelerikBlazor();
 builder.Services.AddSyncfusionBlazor();
+builder.Services.AddIgniteUIBlazor();
 
 var app = builder.Build();
 

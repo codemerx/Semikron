@@ -15,6 +15,7 @@
     <PackageReference Include="C1.Blazor.Chart" Version="6.0.20222.298" />
     <PackageReference Include="C1.Blazor.Grid" Version="6.0.20222.298" />
     <PackageReference Include="C1.Blazor.DataPager" Version="6.0.20222.298" />
+    <PackageReference Include="IgniteUI.Blazor" Version="22.2.21" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.10" />
     <PackageReference Include="Telerik.UI.for.Blazor.Trial" Version="3.6.1" />
 	<PackageReference Include="Syncfusion.Blazor" Version="20.3.0.52" />

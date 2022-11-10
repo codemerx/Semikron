@@ -14,5 +14,6 @@ builder.Services.AddScoped<Database, DBLoaderForWasm>();
 
 builder.Services.AddTelerikBlazor();
 builder.Services.AddSyncfusionBlazor();
+builder.Services.AddIgniteUIBlazor();
 
 await builder.Build().RunAsync();
