@@ -1,0 +1,156 @@
+@page "/grapecity-charts"
+
+@using C1.Chart
+@using C1.Blazor.Chart
+
+<C1.Blazor.Chart.FlexChart ItemsSource="data" BindingX="Year" LegendPosition="Position.Right" AnimationSettings="AnimationSettings.All"
+    ChartType="ChartType.LineSymbols">
+    
+    <SeriesCollection>
+        <Series Binding="Downloads" Name="Downloads"/>
+        <Series Binding="Streams" Name="Streams"/>
+        <Series Binding="Issues" Name="Issues"/>
+    </SeriesCollection>
+</C1.Blazor.Chart.FlexChart>
+
+<C1.Blazor.Chart.FlexChart ItemsSource="data" BindingX="Year" LegendPosition="Position.Right" AnimationSettings="AnimationSettings.All"
+    ChartType="ChartType.Area">
+    
+    <SeriesCollection>
+        <Series Binding="Downloads" Name="Downloads"/>
+        <Series Binding="Streams" Name="Streams"/>
+        <Series Binding="Issues" Name="Issues"/>
+    </SeriesCollection>
+</C1.Blazor.Chart.FlexChart>
+
+<C1.Blazor.Chart.FlexChart ItemsSource="data" BindingX="Year" LegendPosition="Position.Right" AnimationSettings="AnimationSettings.All" 
+    ChartType="ChartType.Bar" Stacking="Stacking.Stacked">
+    
+    <SeriesCollection>
+        <Series Binding="Comments" Name="Comments" StackingGroup="0"/>
+        <Series Binding="Likes" Name="Likes" StackingGroup="1"/>
+        <Series Binding="Dislikes" Name="Dislikes" StackingGroup="1"/>
+    </SeriesCollection>
+</C1.Blazor.Chart.FlexChart>
+
+<C1.Blazor.Chart.FlexChart ItemsSource="data" BindingX="Year" LegendPosition="Position.Right" AnimationSettings="AnimationSettings.All" 
+    ChartType="ChartType.Column" Stacking="Stacking.Stacked">
+    
+    <SeriesCollection>
+        <Series Binding="Sells1" Name="Sells 1" StackingGroup="0"/>
+        <Series Binding="Sells2" Name="Sells 2" StackingGroup="0"/>
+        <Series Binding="Profit" Name="Profit" StackingGroup="1"/>
+    </SeriesCollection>
+</C1.Blazor.Chart.FlexChart>
+
+<C1.Blazor.Chart.FlexChart ItemsSource="data" BindingX="Year" LegendPosition="Position.Right" AnimationSettings="AnimationSettings.All"
+    Palette="Palette.Cyborg">
+    
+    <SeriesCollection>
+        <Series Binding="Cpu" Name="CPU" ChartType="ChartType.Area"/>
+        <Series Binding="Issues" Name="Issues"ChartType="ChartType.Column"/>
+        <Series Binding="Downloads" Name="Downloads"ChartType="ChartType.LineSymbols"/>
+        <Series Binding="Streams" Name="Streams"ChartType="ChartType.LineSymbols"/>
+    </SeriesCollection>
+</C1.Blazor.Chart.FlexChart>
+
+@code {
+    string content = "<div style='padding:6px;border:1px solid darkgrey;background:#f0f0f0;'><b>{x:MMM-dd}</b><br>${y}</div>";
+    List<ChartData> data = new List<ChartData>{
+        new ChartData() {
+            Year="2011", 
+            Downloads=30, 
+            Streams=5, 
+            Cpu=2, 
+            Issues=45, 
+            Comments=15, 
+            Likes=2,
+        },
+        new ChartData() {
+            Year="2012", 
+            Downloads=35, 
+            Streams=6, 
+            Cpu=6, 
+            Issues=40, 
+            Comments=6, 
+            Likes=6,
+            Sells2=5,
+            Profit=5,
+        },
+        new ChartData() {
+            Year="2013", 
+            Downloads=40, 
+            Streams=8, 
+            Cpu=8, 
+            Issues=3, 
+            Comments=32, 
+            Likes=8, 
+        },
+        new ChartData() {
+            Year="2014", 
+            Downloads=45, 
+            Streams=15, 
+            Cpu=45, 
+            Issues=2, 
+            Comments=28, 
+            Likes=45,
+            Dislikes=5,
+            Sells1=5,
+            Sells2=15,
+            Profit=15,
+        },
+        new ChartData() {
+            Year="2015", 
+            Downloads=40, 
+            Streams=23, 
+            Cpu=40, 
+            Issues=25, 
+            Comments=38, 
+            Likes=40,
+            Dislikes=55,
+            Sells1=55,
+            Sells2=30,
+            Profit=30,
+        },
+        new ChartData() {
+            Year="2016", 
+            Downloads=35, 
+            Streams=35, 
+            Cpu=78, 
+            Comments=35, 
+            Likes=40,
+        },
+        new ChartData() {
+            Year="2017", 
+            Downloads=30, 
+            Streams=55, 
+            Cpu=55, 
+            Comments=2, 
+            Likes=55,
+        },
+        new ChartData() {
+            Year="2018", 
+            Downloads=10, 
+            Streams=78, 
+            Cpu=50, 
+            Comments=6, 
+        },
+    };
+
+    public class ChartData
+    {
+        public string Year { get; set; }
+        public int? Downloads { get; set; }
+        public int? Streams { get; set; }
+        public int? Cpu { get; set; }
+        public int? Issues { get; set; }
+        public int? Comments { get; set; }
+        public int? Likes { get; set; }
+        public int? Dislikes { get; set; }
+        public int? Sells1 { get; set; }
+        public int? Sells2 { get; set; }
+        public int? Profit { get; set; }
+    }
+}
+
+
