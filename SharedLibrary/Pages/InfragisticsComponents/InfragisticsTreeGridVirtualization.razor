@@ -1,0 +1,25 @@
+@page "/infragistics-tree-grid-virtualization"
+
+@using SharedLibrary.Data
+
+@inject Database db;
+
+<IgbTreeGrid Data="gridData" AutoGenerate="false" AllowFiltering="true" FilterMode="FilterMode.QuickFilter"
+    PrimaryKey="TaskId" ForeignKey="ParentId" Paging="true"
+    RowSelection="IgniteUI.Blazor.Controls.GridSelectionMode.Multiple">
+
+    <IgbColumn Field="TaskId" Header="Task Id" Sortable="true" DataType="GridColumnDataType.Number" />
+    <IgbColumn Field="TaskName" Header="Task Name" Sortable="true" DataType="GridColumnDataType.String" />
+    <IgbColumn Field="Duration" Header="Duration" Sortable="true" DataType="GridColumnDataType.Number" />
+    <IgbColumn Field="Progress" Header="Progress" Sortable="true" DataType="GridColumnDataType.String" />
+    <IgbColumn Field="Priority" Header="Priority" Sortable="true" DataType="GridColumnDataType.String" />
+</IgbTreeGrid>
+
+@code {
+    private List<TaskInfo> gridData { get; set; } = new List<TaskInfo>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = (await db.GetData()).TaskInfo;
+    }
+}
