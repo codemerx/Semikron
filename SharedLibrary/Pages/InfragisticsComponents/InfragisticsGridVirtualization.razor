@@ -1,4 +1,4 @@
-@page "/infragistics-grid-pagination"
+@page "/infragistics-grid-virtualization"
 
 @using SharedLibrary.Data
 
@@ -7,9 +7,7 @@
 <div>Unable to load 1 million items</div>
 <br />
 
-<IgbGrid Data="gridData" AutoGenerate="false" AllowFiltering="true" FilterMode="FilterMode.QuickFilter">
-    <IgbPaginator PerPage="15" />
-
+<IgbGrid Data="gridData" AutoGenerate="false" AllowFiltering="true" FilterMode="FilterMode.QuickFilter" Height="480px">
     <IgbColumn Field="RowNumber" Header="Row Number" Sortable="true" Groupable="true" DataType="GridColumnDataType.Number" />
     <IgbColumn Field="Id" Header="Id" Sortable="true" Groupable="true" DataType="GridColumnDataType.Number" />
     <IgbColumn Field="PostId" Header="Post Id" Sortable="true" Groupable="true" DataType="GridColumnDataType.Number" />
