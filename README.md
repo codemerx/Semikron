@@ -20,26 +20,26 @@ Legend:
 - :interrobang: = Works but has problems
 
 [^hierarchy]: the ability to expand every row and have custom components inside
-[^no_tree_grid]: It doesn't have tree grid
+[^no_tree_grid]: It doesn't have a tree grid
 [^telerik_virtualization]: Does not work with pagination. OnRead does not work properly with virtualization.
-[^virtualization_limits]: Has browser height limit.
-[^telerik_tree_grid_info]: The name is **TreeList** in telerik components
+[^virtualization_limits]: Has a browser height limit.
+[^telerik_tree_grid_info]: The name is **TreeList** in Telerik components
 [^telerik_tree_grid]: Expects data from parameters. Has no parameter like **OnRead** EventCallback.
 [^telerik_tree_grid_virtualization]: Has only column (horizontally) virtualization
-[^syncfusion]: It has separate nuget package for each component. Can be good for wasm project.
-[^syncfusion_virtualization]: Also works with server side pagination. It loads data while scrolling. But has problem like does not load last 10-20 items.
-[^syncfusion_tree_grid_server_side]: Document says, with CustomDataManager only Self-Referential(Flat) type data is supported. Hierarchical data has limited customizations.
-[^syncfusion_chart_overlap_problem]: Charts can be hide each other when overlaps. Changing opacity solves the problem. This overlapping sometimes can cause tooltip problem (hovering does not work). Changing the drawing order can be solves problem.
-[^c1_chart_overlap_problem]: Overlapping sometimes can cause tooltip problem (hovering does not work). Changing the drawing order can be solves problem.
-[^c1_chart_area_no_tooltip]: Area chart doesn't have tooltip.
-[^c1_grid_group_ui]: It has not build-in grouping UI. Can be triggered from code.
-[^c1_grid_group_problem]: Grouping with pagination/virtualization not worked for me.
+[^syncfusion]: It has a separate NuGet package for each component. Can be good for the wasm project.
+[^syncfusion_virtualization]: Also works with server-side pagination. It loads data while scrolling. But has problems like does not load the last 10-20 items.
+[^syncfusion_tree_grid_server_side]: The document says, with CustomDataManager only Self-Referential(Flat) type data is supported. Hierarchical data has limited customizations.
+[^syncfusion_chart_overlap_problem]: Charts can hide each other when overlap. Changing opacity solves the problem. This overlapping sometimes can cause a tooltip problem (hovering does not work). Changing the drawing order can solve the problem.
+[^c1_chart_overlap_problem]: Overlapping sometimes can cause a tooltip problem (hovering does not work). Changing the drawing order can solve the problem.
+[^c1_chart_area_no_tooltip]: The area chart doesn't have a tooltip.
+[^c1_grid_group_ui]: It has not built-in grouping UI. Can be triggered from code.
+[^c1_grid_group_problem]: Grouping with pagination/virtualization has not worked for me.
 [^c1_bad_docs]: Documents are not detailed.
-[^c1_grid_implementation]: Combining functionalities are requires extra code. For example paging and sorting.
-[^c1_static_file_problem]: Static files (css, js) do not loaded when used with Razor Class Library.
-[^c1_wasm_performance_problem]: Grid expanding and menus have performance problem in Wasm.
-[^infragistics_lang_problem]: It has language problem. Some non-english languages could cause DataGrid loading problem.
-[^infragistics_grid_data_size_limit]: Unable to load too much items (in my tests, it can't load 1,000,000 items but it can load 900,000 items).
-[^infragistics_grid_hierarchy]: Angular and ASP.NET versions have grid hierarchy. Probably the blazor version will come soon.
-[^infragistics_tree_grid_server_blazor]: Has errors on server side blazor. But it works in Wasm.
-[^infragistics_charts_dont_work]: Sample links works but with this project not.
+[^c1_grid_implementation]: Combining the functionalities requires extra code. For example paging and sorting.
+[^c1_static_file_problem]: Static files (CSS, js) do not load when used with Razor Class Library.
+[^c1_wasm_performance_problem]: Grid expanding and menus have a performance problem in Wasm.
+[^infragistics_lang_problem]: It has a language problem. Some non-English languages could cause DataGrid loading problems.
+[^infragistics_grid_data_size_limit]: Unable to load too many items (in my tests, it can't load 1,000,000 items but it can load 900,000 items).
+[^infragistics_grid_hierarchy]: Angular and ASP.NET versions have grid hierarchies. Probably the Blazor version will come soon.
+[^infragistics_tree_grid_server_blazor]: Has errors on the server side Blazor. But it works in Wasm.
+[^infragistics_charts_dont_work]: Sample links work but with this project not.
