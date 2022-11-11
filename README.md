@@ -7,7 +7,7 @@
 |Data grid server-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation], [^c1_grid_group_problem]|
 |Data grid client-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation], [^c1_grid_group_problem]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^infragistics_grid_data_size_limit]|
 |Data grid virtualization|:heavy_check_mark: [^telerik_virtualization], [^virtualization_limits]|:heavy_check_mark: [^virtualization_limits], [^syncfusion_virtualization]|:heavy_check_mark: [^virtualization_limits]|:heavy_check_mark: [^infragistics_grid_data_size_limit]|
-|Data grid hierarchy [^hierarchy]|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
+|Data grid hierarchy [^hierarchy]|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:x: [^infragistics_grid_hierarchy]|
 |Tree grid server-side pagination/sorting/filtering|:x:/:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_tree_grid_server_side]|:x:/:x:/:x: [^no_tree_grid]|
 |Tree grid client-side pagination/sorting/filtering|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:x:/:x:/:x: [^no_tree_grid]|
 |Tree grid virtualization|:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|:x: [^no_tree_grid]|
@@ -39,4 +39,5 @@ Legend:
 [^c1_static_file_problem]: Static files (css, js) do not loaded when used with Razor Class Library.
 [^c1_wasm_performance_problem]: Grid expanding and menus have performance problem in Wasm.
 [^infragistics_lang_problem]: It has language problem. Some non-english languages could cause DataGrid loading problem.
-[^infragistics_grid_data_size_limit]: Unable to load too much items (in my tests, it can't load 1,000,000 items but it can load 900,000 items). 
+[^infragistics_grid_data_size_limit]: Unable to load too much items (in my tests, it can't load 1,000,000 items but it can load 900,000 items).
+[^infragistics_grid_hierarchy]: Angular and ASP.NET versions have grid hierarchy. Probably the blazor version will come soon.
