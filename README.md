@@ -42,4 +42,4 @@ Legend:
 [^infragistics_grid_data_size_limit]: Unable to load too many items (in my tests, it can't load 1,000,000 items but it can load 900,000 items).
 [^infragistics_grid_hierarchy]: Angular and ASP.NET versions have grid hierarchies. Probably the Blazor version will come soon.
 [^infragistics_tree_grid_server_blazor]: Has errors on the server side Blazor. But it works in Wasm.
-[^infragistics_charts_dont_work]: Sample links work but with this project not.
+[^infragistics_charts_dont_work]: Chart examples in the documents work, but in this project do not work.
