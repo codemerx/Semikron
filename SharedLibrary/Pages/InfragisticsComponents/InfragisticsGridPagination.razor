@@ -1,0 +1,23 @@
+@page "/infragistics-grid-pagination"
+
+@using SharedLibrary.Data
+
+@inject Database db;
+
+<IgbGrid Data="gridData" AutoGenerate="false" AllowFiltering="true" FilterMode="FilterMode.QuickFilter">
+    <IgbPaginator PerPage="15" />
+
+    <IgbColumn Field="Id" Header="Id" Sortable="true" Groupable="true" DataType="GridColumnDataType.Number" />
+    <IgbColumn Field="PostId" Header="Post Id" Sortable="true" Groupable="true" DataType="GridColumnDataType.Number" />
+    <IgbColumn Field="Name" Header="Name" Sortable="true" Groupable="true" DataType="GridColumnDataType.String" />
+    <IgbColumn Field="Email" Header="Email" Sortable="true" Groupable="true" DataType="GridColumnDataType.String" />
+</IgbGrid>
+
+@code {
+    private List<Comment> gridData = new List<Comment>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = db.Repeat(2000, (await db.GetData()).Comments);
+    }
+}
