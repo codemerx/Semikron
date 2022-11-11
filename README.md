@@ -11,7 +11,7 @@
 |Tree grid server-side pagination/sorting/filtering|:x:/:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_tree_grid_server_side]|:x:/:x:/:x: [^no_tree_grid]|:x:/:x:/:x:/:x:|
 |Tree grid client-side pagination/sorting/filtering|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:x:/:x:/:x: [^no_tree_grid]|:interrobang:/:interrobang:/:interrobang: [^infragistics_tree_grid_server_blazor]|
 |Tree grid virtualization|:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|:x: [^no_tree_grid]|:interrobang: [^infragistics_tree_grid_server_blazor]|
-|Charts Line/Area/Bar/Stacked Bar/Combined|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_chart_overlap_problem]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^c1_chart_overlap_problem], [^c1_chart_area_no_tooltip]|
+|Charts Line/Area/Bar/Stacked Bar/Combined|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_chart_overlap_problem]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^c1_chart_overlap_problem], [^c1_chart_area_no_tooltip]|:interrobang:/:interrobang:/:interrobang:/:interrobang:/:interrobang: [^infragistics_charts_dont_work]|
 |Notes||[^syncfusion]|[^c1_bad_docs], [^c1_static_file_problem], [^c1_wasm_performance_problem]|[^infragistics_lang_problem]|
 
 Legend:
@@ -42,3 +42,4 @@ Legend:
 [^infragistics_grid_data_size_limit]: Unable to load too much items (in my tests, it can't load 1,000,000 items but it can load 900,000 items).
 [^infragistics_grid_hierarchy]: Angular and ASP.NET versions have grid hierarchy. Probably the blazor version will come soon.
 [^infragistics_tree_grid_server_blazor]: Has errors on server side blazor. But it works in Wasm.
+[^infragistics_charts_dont_work]: Sample links works but with this project not.
