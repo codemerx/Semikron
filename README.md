@@ -2,17 +2,17 @@
 
 ## Blazor component library comparison matrix
 
-||Telerik|Syncfusion|GrapeCity/C1|
-|-|-|-|-|
+||Telerik|Syncfusion|GrapeCity/C1|Infragistics|
+|-|-|-|-|-|
 |Data grid server-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation], [^c1_grid_group_problem]|
-|Data grid client-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation], [^c1_grid_group_problem]|
+|Data grid client-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation], [^c1_grid_group_problem]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|
 |Data grid virtualization|:heavy_check_mark: [^telerik_virtualization], [^virtualization_limits]|:heavy_check_mark: [^virtualization_limits], [^syncfusion_virtualization]|:heavy_check_mark: [^virtualization_limits]|
 |Data grid hierarchy [^hierarchy]|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|
 |Tree grid server-side pagination/sorting/filtering|:x:/:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_tree_grid_server_side]|:x:/:x:/:x: [^no_tree_grid]|
 |Tree grid client-side pagination/sorting/filtering|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:x:/:x:/:x: [^no_tree_grid]|
 |Tree grid virtualization|:x: [^telerik_tree_grid_virtualization]|:heavy_check_mark:|:x: [^no_tree_grid]|
 |Charts Line/Area/Bar/Stacked Bar/Combined|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_chart_overlap_problem]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^c1_chart_overlap_problem], [^c1_chart_area_no_tooltip]|
-|Notes||[^syncfusion]|[^c1_bad_docs], [^c1_static_file_problem], [^c1_wasm_performance_problem]|
+|Notes||[^syncfusion]|[^c1_bad_docs], [^c1_static_file_problem], [^c1_wasm_performance_problem]|[^infragistics_lang_problem]|
 
 Legend:
 - :heavy_check_mark: = works
@@ -38,3 +38,4 @@ Legend:
 [^c1_grid_implementation]: Combining functionalities are requires extra code. For example paging and sorting.
 [^c1_static_file_problem]: Static files (css, js) do not loaded when used with Razor Class Library.
 [^c1_wasm_performance_problem]: Grid expanding and menus have performance problem in Wasm.
+[^infragistics_lang_problem]: It has language problem. Some non-english languages could cause DataGrid loading problem.
