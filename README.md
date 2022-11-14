@@ -2,10 +2,10 @@
 
 ## Blazor component library comparison matrix
 
-||Telerik|Syncfusion|GrapeCity/C1|Infragistics|
-|-|-|-|-|-|
+||Telerik|Syncfusion|GrapeCity/C1|Infragistics|DevExpress|
+|-|-|-|-|-|-|
 |Data grid server-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation], [^c1_grid_group_problem]|:x:/:x:/:x:/:x:|
-|Data grid client-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation], [^c1_grid_group_problem]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^infragistics_grid_data_size_limit]|
+|Data grid client-side pagination/sorting/filtering/grouping|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:interrobang: [^c1_grid_group_ui], [^c1_grid_implementation], [^c1_grid_group_problem]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^infragistics_grid_data_size_limit]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^devexpress_grid_filter_operators]|
 |Data grid virtualization|:heavy_check_mark: [^telerik_virtualization], [^virtualization_limits]|:heavy_check_mark: [^virtualization_limits], [^syncfusion_virtualization]|:heavy_check_mark: [^virtualization_limits]|:heavy_check_mark: [^infragistics_grid_data_size_limit]|
 |Data grid hierarchy [^hierarchy]|:heavy_check_mark:|:heavy_check_mark:|:heavy_check_mark:|:x: [^infragistics_grid_hierarchy]|
 |Tree grid server-side pagination/sorting/filtering|:x:/:x:/:x: [^telerik_tree_grid_info], [^telerik_tree_grid]|:heavy_check_mark:/:heavy_check_mark:/:heavy_check_mark: [^syncfusion_tree_grid_server_side]|:x:/:x:/:x: [^no_tree_grid]|:x:/:x:/:x:/:x:|
@@ -43,3 +43,4 @@ Legend:
 [^infragistics_grid_hierarchy]: Angular and ASP.NET versions have grid hierarchies. Probably the Blazor version will come soon.
 [^infragistics_tree_grid_server_blazor]: Has errors on the server side Blazor. But it works in Wasm.
 [^infragistics_charts_dont_work]: Chart examples in the documents work, but in this project do not work.
+[^devexpress_grid_filter_operators]: Default UI provides a single filter operator. It has templating API for custom filtering UI.
