@@ -28,7 +28,7 @@ Legend:
 [^telerik_tree_grid_virtualization]: Has only column (horizontally) virtualization
 [^syncfusion]: It has a separate NuGet package for each component. Can be good for the wasm project.
 [^syncfusion_virtualization]: Also works with server-side pagination. It loads data while scrolling. But has problems like does not load the last 10-20 items.
-[^syncfusion_tree_grid_server_side]: The document says, with CustomDataManager only Self-Referential(Flat) type data is supported. Hierarchical data has limited customizations.
+[^syncfusion_tree_grid_server_side]: The [document](https://blazor.syncfusion.com/documentation/treegrid/custom-binding) says, with CustomDataManager only Self-Referential(Flat) type data is supported. Hierarchical data has limited customizations.
 [^syncfusion_chart_overlap_problem]: Charts can hide each other when overlap. Changing opacity solves the problem. This overlapping sometimes can cause a tooltip problem (hovering does not work). Changing the drawing order can solve the problem.
 [^c1_chart_overlap_problem]: Overlapping sometimes can cause a tooltip problem (hovering does not work). Changing the drawing order can solve the problem.
 [^c1_chart_area_no_tooltip]: The area chart doesn't have a tooltip.
