@@ -1,0 +1,29 @@
+@using SharedLibrary.Data
+
+@inject Database db;
+
+@if (gridData == null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <DxGrid Data="gridData" PageSize="15">
+        <Columns>
+            <DxGridDataColumn FieldName="Id" />
+            <DxGridDataColumn FieldName="PostId" />
+            <DxGridDataColumn FieldName="Name" />
+            <DxGridDataColumn FieldName="Email" />
+        </Columns>
+    </DxGrid>
+}
+
+@code {
+    [Parameter] public int PostId { get; set; }
+    private List<Comment>? gridData = null;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        gridData = (await db.GetData()).Comments.FindAll(x => x.PostId == PostId);
+    }
+}

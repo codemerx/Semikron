@@ -1,0 +1,30 @@
+@page "/devexpress-grid-hierarchy"
+
+@using SharedLibrary.Data
+
+@inject Database db;
+
+
+<DxGrid Data="gridData" ShowGroupPanel="true" ShowFilterRow="true" PageSize="15">
+    <Columns>
+        <DxGridDataColumn FieldName="Id" />
+        <DxGridDataColumn FieldName="UserId" />
+        <DxGridDataColumn FieldName="Title" />
+    </Columns>
+
+    <DetailRowTemplate>
+        @{
+            var post = (Post)context.DataItem;
+            <DevExpressGridHierarchyDetail PostId="@post.Id" />
+        }
+    </DetailRowTemplate>
+</DxGrid>
+
+@code {
+    private List<Post> gridData = new List<Post>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = (await db.GetData()).Posts;
+    }
+}
