@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using SharedLibrary.Data;
 using Syncfusion.Blazor;
+using DevExpress.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,10 @@ builder.Services.AddSingleton<Database, DBLoaderForServerBlazor>();
 builder.Services.AddTelerikBlazor();
 builder.Services.AddSyncfusionBlazor();
 builder.Services.AddIgniteUIBlazor();
+builder.Services.AddDevExpressBlazor(configure => configure.BootstrapVersion = BootstrapVersion.v5);
+
+builder.WebHost.UseWebRoot("wwwroot");
+builder.WebHost.UseStaticWebAssets();
 
 var app = builder.Build();
 

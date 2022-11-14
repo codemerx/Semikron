@@ -2,35 +2,15 @@
 
 <TelerikChart>
     <ChartSeriesItems>
-        <ChartSeries Type="ChartSeriesType.Line" Name="Downloads" Data="@downloads">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Line" Name="Downloads" Data="@downloads">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
 
-        <ChartSeries Type="ChartSeriesType.Line" Name="Streams" Data="@streams">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Line" Name="Streams" Data="@streams">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
 
-        <ChartSeries Type="ChartSeriesType.Line" Name="Issues" Data="@issues">
-            <ChartSeriesTooltip Visible="true" />
-        </ChartSeries>
-    </ChartSeriesItems>
-
-    <ChartCategoryAxes>
-        <ChartCategoryAxis Categories="@years" />
-    </ChartCategoryAxes>
-</TelerikChart>
-
-<TelerikChart>
-    <ChartSeriesItems>
-        <ChartSeries Type="ChartSeriesType.Area" Name="Downloads" Data="@downloads">
-            <ChartSeriesTooltip Visible="true" />
-        </ChartSeries>
-
-        <ChartSeries Type="ChartSeriesType.Area" Name="Streams" Data="@streams">
-            <ChartSeriesTooltip Visible="true" />
-        </ChartSeries>
-
-        <ChartSeries Type="ChartSeriesType.Area" Name="Issues" Data="@issues">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Line" Name="Issues" Data="@issues">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
     </ChartSeriesItems>
@@ -42,36 +22,35 @@
 
 <TelerikChart>
     <ChartSeriesItems>
-        <ChartSeries Type="ChartSeriesType.Bar" Name="Comments" Data="@comments" >
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Area" Name="Downloads" Data="@downloads">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Area" Name="Streams" Data="@streams">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Area" Name="Issues" Data="@issues">
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+    </ChartSeriesItems>
+
+    <ChartCategoryAxes>
+        <ChartCategoryAxis Categories="@years" />
+    </ChartCategoryAxes>
+</TelerikChart>
+
+<TelerikChart>
+    <ChartSeriesItems>
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Bar" Name="Comments" Data="@comments">
             <ChartSeriesStack Enabled="true" Group="group1"></ChartSeriesStack>
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
-        <ChartSeries Type="ChartSeriesType.Bar" Name="Likes" Data="@likes">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Bar" Name="Likes" Data="@likes">
             <ChartSeriesStack Enabled="true" Group="group2"></ChartSeriesStack>
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
-        <ChartSeries Type="ChartSeriesType.Bar" Name="Dislikes" Data="@dislikes" Color="purple">
-            <ChartSeriesStack Enabled="true" Group="group2"></ChartSeriesStack>
-            <ChartSeriesTooltip Visible="true" />
-        </ChartSeries>
-    </ChartSeriesItems>
-
-    <ChartCategoryAxes>
-        <ChartCategoryAxis Categories="@years" />
-    </ChartCategoryAxes>
-</TelerikChart>
-
-<TelerikChart>
-    <ChartSeriesItems>
-        <ChartSeries Type="ChartSeriesType.Column" Name="Sells 1" Data="@sells1" >
-            <ChartSeriesStack Enabled="true" Group="group1"></ChartSeriesStack>
-            <ChartSeriesTooltip Visible="true" />
-        </ChartSeries>
-        <ChartSeries Type="ChartSeriesType.Column" Name="Sells 2" Data="@sells2">
-            <ChartSeriesStack Enabled="true" Group="group1"></ChartSeriesStack>
-            <ChartSeriesTooltip Visible="true" />
-        </ChartSeries>
-        <ChartSeries Type="ChartSeriesType.Column" Name="Profit" Data="@profit">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Bar" Name="Dislikes" Data="@dislikes" Color="purple">
             <ChartSeriesStack Enabled="true" Group="group2"></ChartSeriesStack>
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
@@ -84,19 +63,40 @@
 
 <TelerikChart>
     <ChartSeriesItems>
-        <ChartSeries Type="ChartSeriesType.Line" Name="Downloads" Data="@downloads">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Column" Name="Sells 1" Data="@sells1">
+            <ChartSeriesStack Enabled="true" Group="group1"></ChartSeriesStack>
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Column" Name="Sells 2" Data="@sells2">
+            <ChartSeriesStack Enabled="true" Group="group1"></ChartSeriesStack>
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Column" Name="Profit" Data="@profit">
+            <ChartSeriesStack Enabled="true" Group="group2"></ChartSeriesStack>
+            <ChartSeriesTooltip Visible="true" />
+        </ChartSeries>
+    </ChartSeriesItems>
+
+    <ChartCategoryAxes>
+        <ChartCategoryAxis Categories="@years" />
+    </ChartCategoryAxes>
+</TelerikChart>
+
+<TelerikChart>
+    <ChartSeriesItems>
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Line" Name="Downloads" Data="@downloads">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
 
-        <ChartSeries Type="ChartSeriesType.Line" Name="Streams" Data="@streams">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Line" Name="Streams" Data="@streams">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
 
-        <ChartSeries Type="ChartSeriesType.Area" Name="CPU" Data="@cpu">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Area" Name="CPU" Data="@cpu">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
 
-        <ChartSeries Type="ChartSeriesType.Bar" Name="Issues" Data="@issues">
+        <ChartSeries Type="Telerik.Blazor.ChartSeriesType.Bar" Name="Issues" Data="@issues">
             <ChartSeriesTooltip Visible="true" />
         </ChartSeries>
     </ChartSeriesItems>
