@@ -1,0 +1,25 @@
+@page "/devexpress-grid-virtualization"
+
+@using SharedLibrary.Data
+
+@inject Database db;
+
+<DxDataGrid Data="gridData" ShowGroupPanel="true" ShowFilterRow="true" 
+    DataNavigationMode="DataGridNavigationMode.VirtualScrolling" VerticalScrollableHeight="480">
+    
+    <DxDataGridColumn Field="@nameof(Comment.RowNumber)" />
+    <DxDataGridColumn Field="@nameof(Comment.Id)" />
+    <DxDataGridColumn Field="@nameof(Comment.PostId)" />
+    <DxDataGridColumn Field="@nameof(Comment.Name)" />
+    <DxDataGridColumn Field="@nameof(Comment.Email)" />
+</DxDataGrid >
+
+@code {
+
+    private List<Comment> gridData = new List<Comment>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = db.Repeat(2000, (await db.GetData()).Comments);
+    }
+}
