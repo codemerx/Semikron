@@ -1,0 +1,30 @@
+@page "/radzen-grid-hierarchy"
+
+@using SharedLibrary.Data
+
+@inject Database db;
+
+<RadzenDataGrid Data="gridData" TItem="Post" AllowPaging="true" PageSize="10" ShowPagingSummary="true"
+    PagerHorizontalAlign="Radzen.HorizontalAlign.Left" AllowSorting="true" AllowMultiColumnSorting="true"
+    ShowMultiColumnSortingIndex="true" AllowGrouping="true" AllowFiltering="true"
+    FilterMode="Radzen.FilterMode.Advanced">
+
+    <Template Context="post">
+        <RadzenGridHierarchyDetail PostId="post.Id" />
+    </Template>
+
+    <Columns>
+        <RadzenDataGridColumn TItem="Post" Property="Id" Title="Id" />
+        <RadzenDataGridColumn TItem="Post" Property="UserId" Title="User Id" />
+        <RadzenDataGridColumn TItem="Post" Property="Title" Title="Title" />
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    private List<Post> gridData = new List<Post>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = (await db.GetData()).Posts;
+    }
+}

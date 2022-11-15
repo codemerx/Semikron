@@ -1,0 +1,29 @@
+@using SharedLibrary.Data
+
+@inject Database db;
+
+@if (gridData == null)
+{
+    <div>Loading...</div>
+}
+else
+{
+    <RadzenDataGrid Data="gridData" TItem="Comment">
+        <Columns>
+            <RadzenDataGridColumn TItem="Comment" Property="Id" Title="Id" />
+            <RadzenDataGridColumn TItem="Comment" Property="PostId" Title="Post Id" />
+            <RadzenDataGridColumn TItem="Comment" Property="Name" Title="Name" />
+            <RadzenDataGridColumn TItem="Comment" Property="Email" Title="Email" />
+        </Columns>
+    </RadzenDataGrid>
+}
+
+@code {
+    [Parameter] public int PostId { get; set; }
+    private List<Comment>? gridData = null;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        gridData = (await db.GetData()).Comments.FindAll(x => x.PostId == PostId);
+    }
+}
