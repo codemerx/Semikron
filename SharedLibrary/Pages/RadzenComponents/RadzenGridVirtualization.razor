@@ -1,0 +1,27 @@
+@page "/radzen-grid-virtualization"
+
+@using SharedLibrary.Data
+
+@inject Database db;
+
+<RadzenDataGrid Data="gridData" TItem="Comment" AllowVirtualization="true" Style="height:580px" AllowSorting="true"
+    AllowMultiColumnSorting="true" ShowMultiColumnSortingIndex="true" AllowGrouping="true" AllowFiltering="true"
+    FilterMode="Radzen.FilterMode.Advanced">
+
+    <Columns>
+        <RadzenDataGridColumn TItem="Comment" Property="RowNumber" Title="Row Number" />
+        <RadzenDataGridColumn TItem="Comment" Property="Id" Title="Id" />
+        <RadzenDataGridColumn TItem="Comment" Property="PostId" Title="Post Id" />
+        <RadzenDataGridColumn TItem="Comment" Property="Name" Title="Name" />
+        <RadzenDataGridColumn TItem="Comment" Property="Email" Title="Email" />
+    </Columns>
+</RadzenDataGrid>
+
+@code {
+    private List<Comment> gridData = new List<Comment>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gridData = db.Repeat(2000, (await db.GetData()).Comments);
+    }
+}
