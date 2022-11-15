@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Web;
 using SharedLibrary.Data;
 using Syncfusion.Blazor;
 using DevExpress.Blazor;
+using Radzen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,11 @@ builder.Services.AddTelerikBlazor();
 builder.Services.AddSyncfusionBlazor();
 builder.Services.AddIgniteUIBlazor();
 builder.Services.AddDevExpressBlazor(configure => configure.BootstrapVersion = BootstrapVersion.v5);
+
+builder.Services.AddScoped<DialogService>();
+builder.Services.AddScoped<NotificationService>();
+builder.Services.AddScoped<TooltipService>();
+builder.Services.AddScoped<ContextMenuService>();
 
 builder.WebHost.UseWebRoot("wwwroot");
 builder.WebHost.UseStaticWebAssets();

@@ -4,10 +4,10 @@
 
 @inject Database db;
 
-<IgbTreeGrid Data="gridData" AutoGenerate="false" AllowFiltering="true" FilterMode="FilterMode.QuickFilter"
-    PrimaryKey="TaskId" ForeignKey="ParentId" Paging="true"
+<IgbTreeGrid Data="gridData" AutoGenerate="false" AllowFiltering="true"
+    FilterMode="IgniteUI.Blazor.Controls.FilterMode.QuickFilter" PrimaryKey="TaskId" ForeignKey="ParentId" Paging="true"
     RowSelection="IgniteUI.Blazor.Controls.GridSelectionMode.Multiple">
-    
+
     <IgbPaginator PerPage="15" />
 
     <IgbColumn Field="TaskId" Header="Task Id" Sortable="true" DataType="GridColumnDataType.Number" />

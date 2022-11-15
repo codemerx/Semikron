@@ -7,8 +7,11 @@
 <div>Unable to load 1 million items</div>
 <br />
 
-<IgbGrid Data="gridData" AutoGenerate="false" AllowFiltering="true" FilterMode="FilterMode.QuickFilter" Height="480px">
-    <IgbColumn Field="RowNumber" Header="Row Number" Sortable="true" Groupable="true" DataType="GridColumnDataType.Number" />
+<IgbGrid Data="gridData" AutoGenerate="false" AllowFiltering="true" Height="480px"
+    FilterMode="IgniteUI.Blazor.Controls.FilterMode.QuickFilter">
+    
+    <IgbColumn Field="RowNumber" Header="Row Number" Sortable="true" Groupable="true"
+        DataType="GridColumnDataType.Number" />
     <IgbColumn Field="Id" Header="Id" Sortable="true" Groupable="true" DataType="GridColumnDataType.Number" />
     <IgbColumn Field="PostId" Header="Post Id" Sortable="true" Groupable="true" DataType="GridColumnDataType.Number" />
     <IgbColumn Field="Name" Header="Name" Sortable="true" Groupable="true" DataType="GridColumnDataType.String" />
