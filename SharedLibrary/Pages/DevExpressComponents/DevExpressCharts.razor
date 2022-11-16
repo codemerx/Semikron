@@ -1,5 +1,7 @@
 @page "/devexpress-charts"
 
+@using SharedLibrary.Data
+
 <DxChart Data="data">
     <DxChartLegend Position="RelativePosition.Outside" HorizontalAlignment="DevExpress.Blazor.HorizontalAlignment.Right"
         VerticalAlignment="VerticalEdge.Bottom" Orientation="DevExpress.Blazor.Orientation.Vertical" />
@@ -11,12 +13,12 @@
         </div>
     </DxChartTooltip>
 
-    <DxChartLineSeries Name="Downloads" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Downloads)" />
-    <DxChartLineSeries Name="Streams" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Streams)" />
-    <DxChartLineSeries Name="Issues" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Issues)" />
+    <DxChartLineSeries Name="Downloads" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Downloads)" />
+    <DxChartLineSeries Name="Streams" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Streams)" />
+    <DxChartLineSeries Name="Issues" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Issues)" />
 </DxChart>
 
 <DxChart Data="data">
@@ -30,12 +32,12 @@
         </div>
     </DxChartTooltip>
 
-    <DxChartAreaSeries Name="Downloads" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Downloads)" />
-    <DxChartAreaSeries Name="Streams" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Streams)" />
-    <DxChartAreaSeries Name="Issues" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Issues)" />
+    <DxChartAreaSeries Name="Downloads" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Downloads)" />
+    <DxChartAreaSeries Name="Streams" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Streams)" />
+    <DxChartAreaSeries Name="Issues" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Issues)" />
 </DxChart>
 
 <DxChart Data="data" Rotated="true">
@@ -49,12 +51,12 @@
         </div>
     </DxChartTooltip>
 
-    <DxChartStackedBarSeries Name="Comments" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Comments)" Stack="0" BarWidth="12" />
-    <DxChartStackedBarSeries Name="Likes" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Likes)" Stack="1" BarWidth="12" />
-    <DxChartStackedBarSeries Name="Dislikes" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Dislikes)" Stack="1" BarWidth="12" />
+    <DxChartStackedBarSeries Name="Comments" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Comments)" Stack="0" BarWidth="12" />
+    <DxChartStackedBarSeries Name="Likes" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Likes)" Stack="1" BarWidth="12" />
+    <DxChartStackedBarSeries Name="Dislikes" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Dislikes)" Stack="1" BarWidth="12" />
 </DxChart>
 
 <DxChart Data="data">
@@ -68,12 +70,12 @@
         </div>
     </DxChartTooltip>
 
-    <DxChartStackedBarSeries Name="Sells 1" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Sells1)" Stack="0" />
-    <DxChartStackedBarSeries Name="Sells 2" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Sells2)" Stack="0" />
-    <DxChartStackedBarSeries Name="Profit" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Profit)" Stack="1" />
+    <DxChartStackedBarSeries Name="Sells 1" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Sells1)" Stack="0" />
+    <DxChartStackedBarSeries Name="Sells 2" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Sells2)" Stack="0" />
+    <DxChartStackedBarSeries Name="Profit" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Profit)" Stack="1" />
 </DxChart>
 
 <DxChart Data="data">
@@ -87,110 +89,15 @@
         </div>
     </DxChartTooltip>
 
-    <DxChartAreaSeries Name="CPU" ArgumentField="@((ChartData i) => i.Year)" 
-        ValueField="@((ChartData i) => i.Cpu)" />
-    <DxChartBarSeries Name="Issues" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Issues)" />
-    <DxChartLineSeries Name="Downloads" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Downloads)" />
-    <DxChartLineSeries Name="Streams" ArgumentField="@((ChartData i) => i.Year)"
-        ValueField="@((ChartData i) => i.Streams)" />
+    <DxChartAreaSeries Name="CPU" ArgumentField="@((ChartItem i) => i.Year)" ValueField="@((ChartItem i) => i.Cpu)" />
+    <DxChartBarSeries Name="Issues" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Issues)" />
+    <DxChartLineSeries Name="Downloads" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Downloads)" />
+    <DxChartLineSeries Name="Streams" ArgumentField="@((ChartItem i) => i.Year)"
+        ValueField="@((ChartItem i) => i.Streams)" />
 </DxChart>
 
 @code {
-    List<ChartData> data = new List<ChartData>{
-        new ChartData() {
-            Year="2011", 
-            Downloads=30, 
-            Streams=5, 
-            Cpu=2, 
-            Issues=45, 
-            Comments=15, 
-            Likes=2,
-        },
-        new ChartData() {
-            Year="2012", 
-            Downloads=35, 
-            Streams=6, 
-            Cpu=6, 
-            Issues=40, 
-            Comments=6, 
-            Likes=6,
-            Sells2=5,
-            Profit=5,
-        },
-        new ChartData() {
-            Year="2013", 
-            Downloads=40, 
-            Streams=8, 
-            Cpu=8, 
-            Issues=3, 
-            Comments=32, 
-            Likes=8, 
-        },
-        new ChartData() {
-            Year="2014", 
-            Downloads=45, 
-            Streams=15, 
-            Cpu=45, 
-            Issues=2, 
-            Comments=28, 
-            Likes=45,
-            Dislikes=5,
-            Sells1=5,
-            Sells2=15,
-            Profit=15,
-        },
-        new ChartData() {
-            Year="2015", 
-            Downloads=40, 
-            Streams=23, 
-            Cpu=40, 
-            Issues=25, 
-            Comments=38, 
-            Likes=40,
-            Dislikes=55,
-            Sells1=55,
-            Sells2=30,
-            Profit=30,
-        },
-        new ChartData() {
-            Year="2016", 
-            Downloads=35, 
-            Streams=35, 
-            Cpu=78, 
-            Comments=35, 
-            Likes=40,
-        },
-        new ChartData() {
-            Year="2017", 
-            Downloads=30, 
-            Streams=55, 
-            Cpu=55, 
-            Comments=2, 
-            Likes=55,
-        },
-        new ChartData() {
-            Year="2018", 
-            Downloads=10, 
-            Streams=78, 
-            Cpu=50, 
-            Comments=6, 
-        },
-    };
-
-    public class ChartData
-    {
-        public string Year { get; set; }
-        public int? Downloads { get; set; }
-        public int? Streams { get; set; }
-        public int? Cpu { get; set; }
-        public int? Issues { get; set; }
-        public int? Comments { get; set; }
-        public int? Likes { get; set; }
-        public int? Dislikes { get; set; }
-        public int? Sells1 { get; set; }
-        public int? Sells2 { get; set; }
-        public int? Profit { get; set; }
-    }
+    ChartData data = new ChartData();
 }

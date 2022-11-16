@@ -1,6 +1,7 @@
 @page "/syncfusion-charts"
 
 @using Syncfusion.Blazor.Charts
+@using SharedLibrary.Data
 
 <SfChart>
     <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
@@ -8,15 +9,15 @@
     <ChartLegendSettings Visible="true" Position="Syncfusion.Blazor.Charts.LegendPosition.Right" />
 
     <ChartSeriesCollection>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@downloads" Name="Downloads" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Downloads" XName="Year" YName="Downloads"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@streams" Name="Streams" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Streams" XName="Year" YName="Streams"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@issues" Name="Issues" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Issues" XName="Year" YName="Issues"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
@@ -29,15 +30,15 @@
     <ChartLegendSettings Visible="true" Position="Syncfusion.Blazor.Charts.LegendPosition.Right" />
 
     <ChartSeriesCollection>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@downloads" Name="Downloads" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Downloads" XName="Year" YName="Downloads"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.7">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@streams" Name="Streams" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Streams" XName="Year" YName="Streams"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.7">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@issues" Name="Issues" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Issues" XName="Year" YName="Issues"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.7">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
@@ -53,13 +54,13 @@
 
 
     <ChartSeriesCollection>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@comments" Name="Comments" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Comments" XName="Year" YName="Comments"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Bar">
         </Syncfusion.Blazor.Charts.ChartSeries>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@likes" Name="Likes" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Likes" XName="Year" YName="Likes"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.StackingBar" StackingGroup="Group1">
         </Syncfusion.Blazor.Charts.ChartSeries>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@dislikes" Name="Dislikes" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Dislikes" XName="Year" YName="Dislikes"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.StackingBar" StackingGroup="Group1" Fill="purple">
         </Syncfusion.Blazor.Charts.ChartSeries>
     </ChartSeriesCollection>
@@ -73,15 +74,15 @@
     <ChartLegendSettings Visible="true" Position="Syncfusion.Blazor.Charts.LegendPosition.Right" />
 
     <ChartSeriesCollection>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@sells1" Name="Sells 1" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Sells 1" XName="Year" YName="Sells1"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.StackingColumn" StackingGroup="Group1">
         </Syncfusion.Blazor.Charts.ChartSeries>
 
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@sells2" Name="Sells 2" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Sells 2" XName="Year" YName="Sells2"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.StackingColumn" StackingGroup="Group1">
         </Syncfusion.Blazor.Charts.ChartSeries>
 
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@profit" Name="Profit" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Profit" XName="Year" YName="Profit"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Column">
         </Syncfusion.Blazor.Charts.ChartSeries>
     </ChartSeriesCollection>
@@ -95,21 +96,21 @@
     <ChartLegendSettings Visible="true" Position="Syncfusion.Blazor.Charts.LegendPosition.Right" />
 
     <ChartSeriesCollection>
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@cpu" Name="CPU" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="CPU" XName="Year" YName="CPU"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Area" Opacity="0.1" Fill="red">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
 
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@issues" Name="Issues" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Issues" XName="Year" YName="Issues"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Column" Opacity="0.5" Fill="blue">
         </Syncfusion.Blazor.Charts.ChartSeries>
 
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@downloads" Name="Downloads" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Downloads" XName="Year" YName="Downloads"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
 
-        <Syncfusion.Blazor.Charts.ChartSeries DataSource="@streams" Name="Streams" XName="X" YName="Y"
+        <Syncfusion.Blazor.Charts.ChartSeries DataSource="data" Name="Streams" XName="Year" YName="Streams"
             Type="Syncfusion.Blazor.Charts.ChartSeriesType.Line" Width="2">
             <ChartMarker Visible="true" Height="10" Width="10" />
         </Syncfusion.Blazor.Charts.ChartSeries>
@@ -118,43 +119,5 @@
 </SfChart>
 
 @code {
-    string[] years = new string[] { "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018" };
-    List<ChartData> downloads;
-    List<ChartData> streams;
-    List<ChartData> cpu;
-    List<ChartData> issues;
-    List<ChartData> comments;
-    List<ChartData> likes;
-    List<ChartData> dislikes;
-    List<ChartData> sells1;
-    List<ChartData> sells2;
-    List<ChartData> profit;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        downloads = GetChartData(new int?[] { 30, 35, 40, 45, 40, 35, 30, 10 });
-        streams = GetChartData(new int?[] { 5, 6, 8, 15, 23, 35, 55, 78 });
-        cpu = GetChartData(new int?[] { 2, 6, 8, 45, 40, 78, 55, 50 });
-        issues = GetChartData(new int?[] { 45, 40, 3, 2, 25 });
-        comments = GetChartData(new int?[] { 15, 6, 32, 28, 38, 35, 2, 6 });
-        likes = GetChartData(new int?[] { 2, 6, 8, 45, 40, 40, 55 });
-        dislikes = GetChartData(new int?[] { 0, 0, 0, 5, 55 });
-        sells1 = GetChartData(new int?[] { 0, 0, 0, 5, 55 });
-        sells2 = GetChartData(new int?[] { 0, 5, 0, 15, 30 });
-        profit = GetChartData(new int?[] { 0, 5, 0, 15, 30 });
-    }
-
-    private List<ChartData> GetChartData(int?[] values)
-    {
-        var index = 0;
-        return years.Select(x => new ChartData() { X = x, Y = values.ElementAtOrDefault(index++) }).ToList();
-    }
-
-    public class ChartData
-    {
-        public string X { get; set; }
-        public int? Y { get; set; }
-    }
+    ChartData data = new ChartData();
 }
