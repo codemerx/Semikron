@@ -1,0 +1,72 @@
+@page "/jscomponents-chartjs"
+
+@using SharedLibrary.Data
+@using System.Collections;
+
+@inject IJSRuntime JS
+
+<canvas @ref="canvas"></canvas>
+
+@code {
+    private IJSObjectReference? chartJs;
+    private ElementReference canvas;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await Init();
+        }
+    }
+
+    private async Task Init()
+    {
+        chartJs = await JS.InvokeAsync<IJSObjectReference>("import",
+        "./_content/SharedLibrary/Pages/JavascriptComponents/ChartJs.razor.js");
+
+        await CreateChart(new ChartArgs(){
+            Canvas = canvas,
+            Data = new ChartData(),
+            LabelName="year",
+            Series = new[]{
+                new ChartSeries(){
+                    Type = "line",
+                    Name = "Downloads",
+                    ValueName = "downloads",
+                },
+                new ChartSeries(){
+                    Type = "line",
+                    Name = "Streams",
+                    ValueName = "streams",
+                },
+                new ChartSeries(){
+                    Type = "line",
+                    Name = "Issues",
+                    ValueName = "issues",
+                },
+            }
+        });
+    }
+
+    private async Task CreateChart(ChartArgs args)
+    {
+        if (chartJs == null) return;
+
+        await chartJs.InvokeVoidAsync("createChart", args);
+    }
+
+    class ChartArgs
+    {
+        public ElementReference Canvas { get; set; }
+        public IEnumerable Data { get; set; }
+        public string LabelName { get; set; }
+        public ICollection<ChartSeries> Series { get; set; }
+    }
+
+    class ChartSeries
+    {
+        public string Type { get; set; }
+        public string Name { get; set; }
+        public string ValueName { get; set; }
+    }
+}
